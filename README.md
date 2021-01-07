@@ -18,3 +18,9 @@ This repository contains a number of software packages, developments and teachin
 
 - Manual for NonadiabaticMolecularDynamics.jl code
 [maurergroup.github.io/NonadiabaticMolecularDynamics.jl](https://maurergroup.github.io/NonadiabaticMolecualrDynamics.jl/)
+
+-Manual for the winak CurvilinearCoordinate Global Optimization code
+[maurergroup.github.io/winak/](https://maurergroup.github.io/winak/)
+
+-Manual for the coolvib code to calculate nonadiabatic vibrational lifetimes of molecules on metal surfaces
+[maurergroup.github.io/coolvib](https://maurergroup.github.io/coolvib/)
