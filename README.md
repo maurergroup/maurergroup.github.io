@@ -8,7 +8,13 @@ You'll find a lot of information on our research on our group webpage:
 
 This repository contains a number of software packages, developments and teaching material.
 
-If you are interested in our hosted interactive notebooks for teaching, go here:
+**CONTENT**
+
+- If you are interested in our hosted interactive notebooks for teaching, go here:
 [maurergroup.github.io/hosted_notebooks](https://maurergroup.github.io/hosted_notebooks)
 
-**MORE INFO TO COME**
+- Manual for DeltaSCF Implementation in CASTEP
+[maurergroup.github.io/DeltaSCF_in_CASTEP_Manual](https://maurergroup.github.io/DeltaSCF_in_CASTEP_Manual/)
+
+- Manual for NonadiabaticMolecularDynamics.jl code
+[maurergorup.github.io/NonadiabaticMolecularDynamics.jl](https://maurergroup.github.io/NonadiabaticMolecualrDynamics.jl/)
