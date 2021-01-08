@@ -17,7 +17,7 @@ This repository contains a number of software packages, developments and teachin
 [maurergroup.github.io/DeltaSCF_in_CASTEP_Manual](https://maurergroup.github.io/DeltaSCF_in_CASTEP_Manual/)
 
 - Manual for NonadiabaticMolecularDynamics.jl code
-[maurergroup.github.io/NonadiabaticMolecularDynamics.jl](https://maurergroup.github.io/NonadiabaticMolecualrDynamics.jl/)
+[maurergroup.github.io/NonadiabaticMolecularDynamics.jl](https://maurergroup.github.io/NonadiabaticMolecularDynamics.jl/dev)
 
 - Manual for the winak CurvilinearCoordinate Global Optimization code
 [maurergroup.github.io/winak/](https://maurergroup.github.io/winak/)
