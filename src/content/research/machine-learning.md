@@ -22,6 +22,14 @@ Our research in transfer learning focuses on enabling models to leverage knowled
 - Few-shot learning methods that work with minimal training data
 - Meta-learning algorithms that enable rapid adaptation to new tasks
 
+A key result in our work shows that the expected loss on a target task $\mathcal{T}_t$ can be bounded by:
+
+$$
+\mathbb{E}_{\mathcal{T}_t}[\mathcal{L}(\theta)] \leq \mathbb{E}_{\mathcal{T}_s}[\mathcal{L}(\theta)] + \mathcal{D}(\mathcal{T}_s, \mathcal{T}_t)
+$$
+
+where $\mathcal{D}(\mathcal{T}_s, \mathcal{T}_t)$ measures the divergence between source and target task distributions.
+
 ## Reinforcement Learning
 
 We explore reinforcement learning approaches for sequential decision-making problems, including:

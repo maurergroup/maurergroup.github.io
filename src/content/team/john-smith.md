@@ -10,6 +10,8 @@ researchInterests:
   - "AI Fairness"
   - "Algorithmic Bias"
   - "Responsible AI"
+researchAreas:
+  - "machine-learning"
 education:
   - degree: "Ph.D. in Computer Science"
     institution: "Carnegie Mellon University"

@@ -25,20 +25,20 @@ const locations = {
 };
 ---
 
-<Layout title="Advanced Computing Research Lab">
+<Layout title="Computational Surface Science - The Maurer Research Group"></Layout>
   <Navigation />
   <Hero 
-    title="Advanced Computing Research Lab"
-    subtitle="Pioneering innovative solutions in artificial intelligence, machine learning, and computational systems"
+    title="Computational Surface Science - The Maurer Research Group"
+    subtitle="Exploring the intersection of computation and surface science to drive innovation in materials and chemical processes."
   />
 
   <div class="container">
     <section id="about">
       <h2>About</h2>
       <div class="research-overview">
-        <p>The Advanced Computing Research Lab is a collaborative research environment dedicated to pushing the boundaries of artificial intelligence, machine learning, and computational systems. Our interdisciplinary team tackles fundamental challenges in computer science while developing practical solutions that impact society. We foster an inclusive culture of innovation, mentorship, and excellence, working on projects that span from theoretical foundations to real-world applications in natural language processing, computer vision, and ethical AI development.</p>
+        <p>The Maurer group focuses on the theory and simulation of molecular reactions on surfaces and at interfaces. We study the structure, composition, and reactivity of molecules interacting with solid surfaces. Using quantum mechanical simulation methods, such as Density-Functional Theory, our goal is to find a detailed understanding of the explicit molecular-level dynamics of molecular reactions as they appear in heterogeneous catalysis, photochemistry and nanotechnology. Our method development efforts target the efficient simulation of nonadiabatic and quantum effects in large surface-adsorbate systems, complex surface nanostructures, and gas-surface dynamics.</p>
       </div>
-      <h3 class="section-subheading">Principal Investigator</h3>
+      <h3 class="section-subheading">Head of the Group</h3>
       <div class="about-content">
         <div class="profile-image">
           {principalInvestigator.data.name.split(' ').map(n => n[0]).join('')}
@@ -55,7 +55,7 @@ const locations = {
 
     <section id="research">
       <h2>Research Areas</h2>
-      <p class="section-subtitle">Our lab focuses on several cutting-edge areas of computer science</p>
+      <p class="section-subtitle">Our lab focuses on several cutting-edge areas of computational material science and chemistry</p>
       <div class="research-grid">
         {researchAreas.map(area => (
           <ResearchCard
@@ -101,7 +101,7 @@ const locations = {
 
     <section id="software">
       <h2>Software</h2>
-      <p class="section-subtitle">Open-source tools and libraries developed by our lab</p>
+      <p class="section-subtitle">Open-source tools and libraries developed by our group</p>
       <div class="software-grid">
         {software.map(sw => (
           <SoftwareCard
@@ -137,39 +137,40 @@ const locations = {
 
     <section id="locations">
       <h2>How to Find Us</h2>
-      <p class="section-subtitle">We operate from three locations across the globe</p>
+      <p class="section-subtitle">We operate from two international locations</p>
       <div class="locations-grid">
-        <div class="location-card" data-location="usa">
-          <div class="location-flag">🇺🇸</div>
-          <h3>Stanford, USA</h3>
+        <div class="location-card" data-location="at">
+          <div class="location-flag">at</div>
+          <h3>Vienna, Austria</h3>
           <p class="location-address">
-            Department of Computer Science<br>
-            Stanford University<br>
-            353 Jane Stanford Way<br>
-            Stanford, CA 94305
+            Computational Materials Physics<br>
+            Faculty of Physics<br>
+            University of Vienna<br>
+            Kolingasse 14-16<br>
+            1090 Vienna, Austria
           </p>
           <div class="location-team">
             <strong>Team Members:</strong>
             <ul>
-              {locations.usa.map(member => (
+              {locations.at.map(member => (
                 <li>{member.data.name}</li>
               ))}
             </ul>
           </div>
           <div class="location-contact">
-            <p><strong>Email:</strong> usa@researchlab.edu</p>
-            <p><strong>Phone:</strong> +1 (650) 123-4567</p>
+            <p><strong>Web:</strong> https://cmp.univie.ac.at/</p>
+            <p><strong>Phone:</strong> +43-1-4277-514 01</p>
           </div>
         </div>
 
         <div class="location-card" data-location="uk">
           <div class="location-flag">🇬🇧</div>
-          <h3>Cambridge, UK</h3>
+          <h3>Coventry, UK</h3>
           <p class="location-address">
-            Computer Laboratory<br>
-            University of Cambridge<br>
-            15 JJ Thomson Avenue<br>
-            Cambridge CB3 0FD
+            Centre for Computational and Theoretical Chemistry<br>
+            Department of Chemistry<br>
+            University of Warwick<br>
+            Coventry CV4 7AL
           </p>
           <div class="location-team">
             <strong>Team Members:</strong>
@@ -180,19 +181,21 @@ const locations = {
             </ul>
           </div>
           <div class="location-contact">
-            <p><strong>Email:</strong> uk@researchlab.edu</p>
-            <p><strong>Phone:</strong> +44 1223 123456</p>
+            <p><strong>Web:</strong> https://warwick.ac.uk/fac/sci/chemistry/research/catch/</p>
+            <p><strong>Phone:</strong> +44 (0)2476 5 23228</p>
           </div>
         </div>
 
         <div class="location-card" data-location="germany">
           <div class="location-flag">🇩🇪</div>
-          <h3>Munich, Germany</h3>
+          <h3>Göttingen, Germany</h3>
           <p class="location-address">
-            Technical University of Munich<br>
-            Department of Informatics<br>
-            Boltzmannstraße 3<br>
-            85748 Garching bei München
+            Coming Soon! (starting in March 2026)<br>
+            Chair of Theoretical Chemistry<br>
+            Institut für Physikalische Chemie<br>
+            Tammannstraße 6<br>
+            University of Göttingen<br>
+            37077 Göttingen, Germany
           </p>
           <div class="location-team">
             <strong>Team Members:</strong>
@@ -203,8 +206,8 @@ const locations = {
             </ul>
           </div>
           <div class="location-contact">
-            <p><strong>Email:</strong> germany@researchlab.edu</p>
-            <p><strong>Phone:</strong> +49 89 12345678</p>
+            <p><strong>Web:</strong> https://www.uni-goettingen.de/de/28451.html</p>
+            <p><strong>Phone:</strong> +49(551) 39-23102</p>
           </div>
         </div>
       </div>
@@ -212,7 +215,7 @@ const locations = {
   </div>
 
   <footer>
-    <p>&copy; 2024 Advanced Computing Research Lab. All rights reserved.</p>
+    <p>&copy; 2025 Computational Surface Science Group. All rights reserved.</p>
   </footer>
 </Layout>
 

@@ -14,6 +14,9 @@ researchInterests:
   - "Natural Language Processing"
   - "Computer Vision"
   - "AI Ethics"
+researchAreas:
+  - "machine-learning"
+  - "nlp"
 education:
   - degree: "Ph.D. in Computer Science"
     institution: "Stanford University"

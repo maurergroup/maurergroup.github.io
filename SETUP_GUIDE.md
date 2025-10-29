@@ -9,6 +9,7 @@ A fully functional academic research group website with:
 - ✅ TypeScript support with content validation
 - ✅ Responsive layouts and components
 - ✅ GitHub Actions deployment workflow
+- ✅ **LaTeX/Math equation support** (KaTeX) - See [LATEX_GUIDE.md](LATEX_GUIDE.md)
 
 ### Pages
 - ✅ Homepage with all sections (About, Research, Team, Publications, Software, Opportunities, Locations)

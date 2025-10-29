@@ -15,6 +15,7 @@ const teamCollection = defineCollection({
     scholar: z.string().url().optional(),
     location: z.enum(['usa', 'uk', 'germany']),
     researchInterests: z.array(z.string()).optional(),
+    researchAreas: z.array(z.string()).optional(), // Slugs of research areas
     education: z.array(z.object({
       degree: z.string(),
       institution: z.string(),

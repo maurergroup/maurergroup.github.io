@@ -2,15 +2,19 @@
 interface Props {
   title: string;
   description: string;
+  slug: string;
 }
 
-const { title, description } = Astro.props;
+const { title, description, slug } = Astro.props;
 ---
 
-<div class="research-card">
+<a href={`/research/${slug}`} class="research-card">
   <h3>{title}</h3>
   <p>{description}</p>
-</div>
+  <div class="read-more">
+    Learn more →
+  </div>
+</a>
 
 <style>
   .research-card {
@@ -19,6 +23,10 @@ const { title, description } = Astro.props;
     border-radius: 12px;
     border: 1px solid var(--border);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    cursor: pointer;
   }
 
   .research-card:hover {
@@ -30,10 +38,28 @@ const { title, description } = Astro.props;
     color: var(--primary);
     margin-bottom: 1rem;
     font-size: 1.5rem;
+    transition: color 0.3s;
+  }
+
+  .research-card:hover h3 {
+    color: var(--primary-dark);
   }
 
   .research-card p {
     color: var(--text-light);
     line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  .read-more {
+    color: var(--primary);
+    font-weight: 500;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .research-card:hover .read-more {
+    opacity: 1;
   }
 </style>

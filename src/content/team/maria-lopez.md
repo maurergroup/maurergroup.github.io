@@ -10,6 +10,8 @@ researchInterests:
   - "Multimodal Learning"
   - "Cross-lingual NLP"
   - "Machine Translation"
+researchAreas:
+  - "nlp"
 education:
   - degree: "M.S. in Computer Science"
     institution: "University of Edinburgh"
