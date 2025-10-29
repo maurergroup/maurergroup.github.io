@@ -1,0 +1,39 @@
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="research-card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+  .research-card {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .research-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .research-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .research-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+</style>

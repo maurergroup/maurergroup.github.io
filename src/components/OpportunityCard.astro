@@ -1,0 +1,121 @@
+---
+interface Props {
+  title: string;
+  type: string;
+  location: string;
+  deadline?: Date;
+  open: boolean;
+}
+
+const { title, type, location, deadline, open } = Astro.props;
+
+const typeLabels = {
+  phd: 'PhD Position',
+  postdoc: 'Postdoc',
+  engineer: 'Research Engineer',
+  intern: 'Internship',
+  visiting: 'Visiting Researcher'
+};
+
+const locationLabels = {
+  usa: 'USA',
+  uk: 'UK',
+  germany: 'Germany',
+  remote: 'Remote',
+  any: 'Multiple Locations'
+};
+
+const formatDeadline = (date: Date) => {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+---
+
+<div class="opportunity-card">
+  <div class="opportunity-header">
+    <h3>{title}</h3>
+    {open && <span class="open-badge">Open</span>}
+  </div>
+  <div class="opportunity-meta">
+    <span class="meta-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+        <circle cx="12" cy="7" r="4"/>
+      </svg>
+      {typeLabels[type]}
+    </span>
+    <span class="meta-item">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+        <circle cx="12" cy="10" r="3"/>
+      </svg>
+      {locationLabels[location]}
+    </span>
+    {deadline && (
+      <span class="meta-item deadline">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10"/>
+          <polyline points="12 6 12 12 16 14"/>
+        </svg>
+        Deadline: {formatDeadline(deadline)}
+      </span>
+    )}
+  </div>
+  <slot />
+</div>
+
+<style>
+  .opportunity-card {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--primary);
+  }
+
+  .opportunity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    margin-bottom: 1rem;
+  }
+
+  .opportunity-card h3 {
+    color: var(--text);
+    font-size: 1.25rem;
+    margin: 0;
+  }
+
+  .open-badge {
+    background: #10b981;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  .opportunity-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 0.875rem;
+  }
+
+  .meta-item svg {
+    flex-shrink: 0;
+  }
+
+  .deadline {
+    color: #f59e0b;
+    font-weight: 500;
+  }
+</style>

@@ -1,0 +1,941 @@
+
+## Project Structure
+```
+research-lab/
+├── src/
+│   ├── content/
+│   │   ├── config.ts
+│   │   ├── team/
+│   │   │   ├── jane-researcher.md
+│   │   │   ├── john-smith.md
+│   │   │   └── maria-lopez.md
+│   │   ├── publications/
+│   │   │   ├── neural-architecture-2024.md
+│   │   │   └── fairness-aware-2023.md
+│   │   └── research/
+│   │       ├── machine-learning.md
+│   │       └── nlp.md
+│   ├── layouts/
+│   │   └── Layout.astro
+│   ├── components/
+│   │   ├── Navigation.astro
+│   │   ├── Hero.astro
+│   │   ├── TeamMember.astro
+│   │   ├── Publication.astro
+│   │   └── ResearchCard.astro
+│   └── pages/
+│       └── index.astro
+├── public/
+│   └── images/
+├── astro.config.mjs
+├── package.json
+└── tsconfig.json
+```
+
+## Setup Instructions
+
+### 1. Initialize the Project
+```bash
+npm create astro@latest research-lab
+cd research-lab
+npm install
+```
+
+### 2. Install Dependencies
+```bash
+npm install @astrojs/mdx
+```
+
+---
+
+## File Contents
+
+### `astro.config.mjs`
+```javascript
+import { defineConfig } from 'astro/config';
+import mdx from '@astrojs/mdx';
+
+export default defineConfig({
+  site: 'https://yourusername.github.io',
+  base: '/repository-name',
+  integrations: [mdx()],
+  output: 'static'
+});
+```
+
+### `package.json`
+```json
+{
+  "name": "research-lab",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^4.0.0",
+    "@astrojs/mdx": "^2.0.0"
+  }
+}
+```
+
+### `src/content/config.ts`
+```typescript
+import { defineCollection, z } from 'astro:content';
+
+const teamCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name: z.string(),
+    role: z.string(),
+    email: z.string().email(),
+    image: z.string().optional(),
+    order: z.number(),
+    bio: z.string().optional()
+  })
+});
+
+const publicationsCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    authors: z.array(z.string()),
+    venue: z.string(),
+    year: z.number(),
+    pdf: z.string().url().optional(),
+    code: z.string().url().optional(),
+    dataset: z.string().url().optional(),
+    demo: z.string().url().optional(),
+    date: z.date()
+  })
+});
+
+const researchCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+    order: z.number()
+  })
+});
+
+export const collections = {
+  'team': teamCollection,
+  'publications': publicationsCollection,
+  'research': researchCollection
+};
+```
+
+### `src/content/team/jane-researcher.md`
+```markdown
+---
+name: "Dr. Jane Researcher"
+role: "Principal Investigator"
+email: "jane@university.edu"
+order: 1
+bio: "Dr. Researcher leads a dynamic team focused on advancing the frontiers of artificial intelligence and machine learning."
+---
+
+Dr. Researcher has over 15 years of experience in computational research and has published more than 100 papers in top-tier venues. Her research interests span neural networks, natural language processing, computer vision, and the ethical implications of AI systems.
+
+She is committed to fostering an inclusive research environment and mentoring the next generation of computer scientists.
+```
+
+### `src/content/team/john-smith.md`
+```markdown
+---
+name: "Dr. John Smith"
+role: "Senior Researcher"
+email: "john@university.edu"
+order: 2
+---
+
+Dr. Smith specializes in fairness and ethics in AI systems, with a focus on developing frameworks for responsible AI deployment.
+```
+
+### `src/content/team/maria-lopez.md`
+```markdown
+---
+name: "Maria Lopez"
+role: "PhD Candidate"
+email: "maria@university.edu"
+order: 3
+---
+
+Maria's research focuses on multimodal learning and cross-lingual understanding in natural language processing.
+```
+
+### `src/content/publications/neural-architecture-2024.md`
+```markdown
+---
+title: "Advancing Neural Architecture Search with Efficient Transfer Learning"
+authors: ["J. Researcher", "M. Lopez", "D. Chen"]
+venue: "International Conference on Machine Learning (ICML) 2024"
+year: 2024
+date: 2024-07-15
+pdf: "https://example.com/paper.pdf"
+code: "https://github.com/lab/nas-transfer"
+---
+
+This paper presents a novel approach to neural architecture search that leverages transfer learning to significantly reduce computational costs while maintaining high performance.
+```
+
+### `src/content/publications/fairness-aware-2023.md`
+```markdown
+---
+title: "Fairness-Aware Deep Learning: A Comprehensive Framework"
+authors: ["J. Smith", "J. Researcher", "S. Patel"]
+venue: "Journal of Artificial Intelligence Research, Vol. 78, 2023"
+year: 2023
+date: 2023-09-01
+pdf: "https://example.com/fairness-paper.pdf"
+---
+
+We propose a comprehensive framework for developing fairness-aware deep learning systems that can ensure equitable outcomes across diverse populations.
+```
+
+### `src/content/research/machine-learning.md`
+```markdown
+---
+title: "Machine Learning"
+description: "Developing novel algorithms for deep learning, reinforcement learning, and transfer learning."
+order: 1
+---
+
+Our work focuses on creating more efficient and interpretable models that can be applied across various domains. We explore cutting-edge techniques in neural architecture search, meta-learning, and few-shot learning.
+```
+
+### `src/content/research/nlp.md`
+```markdown
+---
+title: "Natural Language Processing"
+description: "Advancing language understanding through transformer architectures and multilingual models."
+order: 2
+---
+
+We develop dialogue systems that can engage in meaningful conversations and work on multilingual models that bridge language barriers.
+```
+
+### `src/layouts/Layout.astro`
+```astro
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{title}</title>
+  <style is:global>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1e40af;
+      --text: #1e293b;
+      --text-light: #64748b;
+      --bg: #ffffff;
+      --bg-alt: #f8fafc;
+      --border: #e2e8f0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 2rem;
+    }
+
+    section {
+      margin-bottom: 5rem;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    .section-subtitle {
+      color: var(--text-light);
+      font-size: 1.125rem;
+      margin-bottom: 3rem;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <slot />
+</body>
+</html>
+```
+
+### `src/components/Navigation.astro`
+```astro
+<nav>
+  <div class="nav-container">
+    <div class="logo">Research Lab</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+  </div>
+</nav>
+
+<style>
+  nav {
+    position: sticky;
+    top: 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    z-index: 100;
+    padding: 1rem 0;
+  }
+
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover {
+    color: var(--primary);
+  }
+
+  @media (max-width: 768px) {
+    .nav-links {
+      gap: 1rem;
+      font-size: 0.875rem;
+    }
+  }
+</style>
+```
+
+### `src/components/Hero.astro`
+```astro
+---
+interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<div class="hero">
+  <h1>{title}</h1>
+  <p>{subtitle}</p>
+</div>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .hero p {
+    font-size: 1.25rem;
+    max-width: 700px;
+    margin: 0 auto;
+    opacity: 0.95;
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero p {
+      font-size: 1rem;
+    }
+  }
+</style>
+```
+
+### `src/components/TeamMember.astro`
+```astro
+---
+interface Props {
+  name: string;
+  role: string;
+  email: string;
+  image?: string;
+}
+
+const { name, role, email, image } = Astro.props;
+const initials = name.split(' ').map(n => n[0]).join('');
+---
+
+<div class="team-member">
+  <div class="member-photo">
+    {image ? <img src={image} alt={name} /> : initials}
+  </div>
+  <div class="member-name">{name}</div>
+  <div class="member-role">{role}</div>
+  <a href={`mailto:${email}`} class="member-email">{email}</a>
+</div>
+
+<style>
+  .team-member {
+    text-align: center;
+  }
+
+  .member-photo {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 3rem;
+    font-weight: 600;
+    overflow: hidden;
+  }
+
+  .member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .member-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+
+  .member-role {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .member-email {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 0.875rem;
+  }
+
+  .member-email:hover {
+    text-decoration: underline;
+  }
+</style>
+```
+
+### `src/components/Publication.astro`
+```astro
+---
+interface Props {
+  title: string;
+  authors: string[];
+  venue: string;
+  pdf?: string;
+  code?: string;
+  dataset?: string;
+  demo?: string;
+}
+
+const { title, authors, venue, pdf, code, dataset, demo } = Astro.props;
+---
+
+<div class="publication">
+  <div class="publication-title">{title}</div>
+  <div class="publication-authors">{authors.join(', ')}</div>
+  <div class="publication-venue">{venue}</div>
+  <div class="publication-links">
+    {pdf && <a href={pdf} class="pub-link" target="_blank">PDF</a>}
+    {code && <a href={code} class="pub-link" target="_blank">Code</a>}
+    {dataset && <a href={dataset} class="pub-link" target="_blank">Dataset</a>}
+    {demo && <a href={demo} class="pub-link" target="_blank">Demo</a>}
+  </div>
+</div>
+
+<style>
+  .publication {
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 1.5rem;
+  }
+
+  .publication-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .publication-authors {
+    color: var(--text-light);
+    margin-bottom: 0.5rem;
+  }
+
+  .publication-venue {
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .publication-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .pub-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--primary);
+    border-radius: 4px;
+    transition: all 0.3s;
+    font-size: 0.875rem;
+  }
+
+  .pub-link:hover {
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+  }
+</style>
+```
+
+### `src/components/ResearchCard.astro`
+```astro
+---
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<div class="research-card">
+  <h3>{title}</h3>
+  <p>{description}</p>
+</div>
+
+<style>
+  .research-card {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .research-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .research-card h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .research-card p {
+    color: var(--text-light);
+    line-height: 1.7;
+  }
+</style>
+```
+
+### `src/pages/index.astro`
+```astro
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import TeamMember from '../components/TeamMember.astro';
+import Publication from '../components/Publication.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import { getCollection } from 'astro:content';
+
+const teamMembers = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+const publications = (await getCollection('publications')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const researchAreas = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+
+const principalInvestigator = teamMembers[0];
+---
+
+<Layout title="Advanced Computing Research Lab">
+  <Navigation />
+  <Hero 
+    title="Advanced Computing Research Lab"
+    subtitle="Pioneering innovative solutions in artificial intelligence, machine learning, and computational systems"
+  />
+
+  <div class="container">
+    <section id="about">
+      <h2>About</h2>
+      <div class="about-content">
+        <div class="profile-image">
+          {principalInvestigator.data.name.split(' ').map(n => n[0]).join('')}
+        </div>
+        <div class="bio">
+          <h3>{principalInvestigator.data.name}</h3>
+          <p><strong>{principalInvestigator.data.role}</strong></p>
+          <div class="bio-text">
+            {principalInvestigator.body}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research Areas</h2>
+      <p class="section-subtitle">Our lab focuses on several cutting-edge areas of computer science</p>
+      <div class="research-grid">
+        {researchAreas.map(area => (
+          <ResearchCard 
+            title={area.data.title}
+            description={area.data.description}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="team">
+      <h2>Our Team</h2>
+      <p class="section-subtitle">Meet the brilliant minds behind our research</p>
+      <div class="team-grid">
+        {teamMembers.map(member => (
+          <TeamMember 
+            name={member.data.name}
+            role={member.data.role}
+            email={member.data.email}
+            image={member.data.image}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Recent Publications</h2>
+      <p class="section-subtitle">Selected publications from our research group</p>
+      {publications.map(pub => (
+        <Publication 
+          title={pub.data.title}
+          authors={pub.data.authors}
+          venue={pub.data.venue}
+          pdf={pub.data.pdf}
+          code={pub.data.code}
+          dataset={pub.data.dataset}
+          demo={pub.data.demo}
+        />
+      ))}
+    </section>
+
+    <section id="location">
+      <h2>Location</h2>
+      <div class="location-content">
+        <div class="location-info">
+          <p><strong>Department of Computer Science</strong><br>
+          University Name<br>
+          123 Research Drive<br>
+          City, State 12345<br>
+          Country</p>
+
+          <h3>Contact</h3>
+          <p>Email: <a href="mailto:lab@university.edu">lab@university.edu</a><br>
+          Phone: +1 (555) 123-4567</p>
+
+          <h3>Visiting</h3>
+          <p>Our lab is located in the Computer Science building, Room 456. Visitors are welcome by appointment.</p>
+        </div>
+        <div class="map-placeholder">
+          [Map Integration: Add Google Maps embed here]
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Advanced Computing Research Lab. All rights reserved.</p>
+  </footer>
+</Layout>
+
+<style>
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .profile-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  .bio h3 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .bio-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .location-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+  }
+
+  .location-info {
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .location-info h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
+  }
+
+  .map-placeholder {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    aspect-ratio: 16/9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-light);
+    font-size: 1.125rem;
+  }
+
+  footer {
+    background: var(--text);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  footer p {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .about-content,
+    .location-content {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href')!);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
+```
+
+---
+
+## GitHub Pages Deployment
+
+### Create `.github/workflows/deploy.yml`
+```yaml
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install
+      
+      - name: Build
+        run: npm run build
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+```
+
+---
+
+## Usage Instructions
+
+### Adding a New Team Member
+Create `src/content/team/new-person.md`:
+```markdown
+---
+name: "New Person"
+role: "Research Assistant"
+email: "new@university.edu"
+order: 7
+---
+
+Brief bio about the person.
+```
+
+### Adding a Publication
+Create `src/content/publications/my-paper-2024.md`:
+```markdown
+---
+title: "My Amazing Paper"
+authors: ["Author One", "Author Two"]
+venue: "Conference Name 2024"
+year: 2024
+date: 2024-10-15
+pdf: "https://example.com/paper.pdf"
+code: "https://github.com/username/repo"
+---
+
+Optional abstract or description.
+```
+
+### Running Locally
+```bash
+npm run dev
+```
+
+Visit `http://localhost:4321`
+
+### Building for Production
+```bash
+npm run build
+```
+
+---
+
+## Key Benefits
+✅ All content in simple Markdown files  
+✅ Type-safe content schemas  
+✅ Automatic sorting and organization  
+✅ Easy to add/edit team members, publications, research areas  
+✅ No database needed  
+✅ Fast static site generation  
+✅ Automatic deployment to GitHub Pages

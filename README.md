@@ -1,4 +1,4 @@
-# Astro Starter Kit: Basics
+# Astro Academic Research Website
 
 ```sh
 npm create astro@latest -- --template basics

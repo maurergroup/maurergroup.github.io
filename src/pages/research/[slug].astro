@@ -1,0 +1,229 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import Publication from '../../components/Publication.astro';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async () => {
+  const researchAreas = await getCollection('research');
+  return researchAreas.map(area => ({
+    params: { slug: area.slug },
+    props: { area }
+  }));
+}) satisfies GetStaticPaths;
+
+const { area } = Astro.props;
+const { Content } = await area.render();
+
+// Get related publications (publications that mention this research area in their tags or content)
+const allPublications = await getCollection('publications');
+const relatedPublications = allPublications
+  .filter(pub => {
+    // Simple matching - you can enhance this logic based on your needs
+    const searchTerm = area.data.title.toLowerCase();
+    return pub.data.title.toLowerCase().includes(searchTerm) ||
+           pub.data.venue.toLowerCase().includes(searchTerm);
+  })
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 5);
+---
+
+<Layout title={`${area.data.title} - Research Lab`}>
+  <Navigation />
+
+  <div class="research-hero">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="/">Home</a> / <a href="/#research">Research</a> / {area.data.title}
+      </div>
+      <h1>{area.data.title}</h1>
+      <p class="hero-description">{area.data.description}</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="content-section">
+      <div class="main-content">
+        <Content />
+      </div>
+    </div>
+
+    {relatedPublications.length > 0 && (
+      <div class="publications-section">
+        <h2>Related Publications</h2>
+        <p class="section-subtitle">Recent papers in this research area</p>
+        {relatedPublications.map(pub => (
+          <Publication
+            title={pub.data.title}
+            authors={pub.data.authors}
+            venue={pub.data.venue}
+            pdf={pub.data.pdf}
+            code={pub.data.code}
+            dataset={pub.data.dataset}
+            demo={pub.data.demo}
+          />
+        ))}
+      </div>
+    )}
+
+    <div class="back-link">
+      <a href="/#research">← Back to Research Areas</a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .research-hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 4rem 2rem 3rem;
+  }
+
+  .hero-content {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+    font-size: 0.875rem;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 1;
+    text-decoration: underline;
+  }
+
+  .research-hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+
+  .content-section {
+    margin-bottom: 4rem;
+  }
+
+  .main-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+  }
+
+  .main-content :global(h2) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .main-content :global(h3) {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .main-content :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .main-content :global(ul), .main-content :global(ol) {
+    margin-left: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .main-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .main-content :global(strong) {
+    color: var(--text);
+  }
+
+  .main-content :global(code) {
+    background: var(--bg-alt);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--primary);
+  }
+
+  .main-content :global(blockquote) {
+    border-left: 4px solid var(--primary);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-light);
+  }
+
+  .publications-section {
+    margin-bottom: 3rem;
+  }
+
+  .publications-section h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+
+  .section-subtitle {
+    color: var(--text-light);
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+  }
+
+  .back-link {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .back-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+
+  .back-link a:hover {
+    gap: 0.75rem;
+  }
+
+  @media (max-width: 768px) {
+    .research-hero h1 {
+      font-size: 2rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .main-content {
+      font-size: 1rem;
+    }
+  }
+</style>

@@ -1,11 +1,425 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero.astro';
+import TeamMember from '../components/TeamMember.astro';
+import Publication from '../components/Publication.astro';
+import ResearchCard from '../components/ResearchCard.astro';
+import SoftwareCard from '../components/SoftwareCard.astro';
+import OpportunityCard from '../components/OpportunityCard.astro';
+import { getCollection } from 'astro:content';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const teamMembers = (await getCollection('team')).sort((a, b) => a.data.order - b.data.order);
+const publications = (await getCollection('publications')).sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const researchAreas = (await getCollection('research')).sort((a, b) => a.data.order - b.data.order);
+const software = (await getCollection('software')).sort((a, b) => a.data.order - b.data.order);
+const opportunities = (await getCollection('opportunities')).filter(opp => opp.data.open).sort((a, b) => a.data.order - b.data.order);
+
+const principalInvestigator = teamMembers[0];
+
+// Group team members by location
+const locations = {
+  usa: teamMembers.filter(m => m.data.location === 'usa'),
+  uk: teamMembers.filter(m => m.data.location === 'uk'),
+  germany: teamMembers.filter(m => m.data.location === 'germany')
+};
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Advanced Computing Research Lab">
+  <Navigation />
+  <Hero 
+    title="Advanced Computing Research Lab"
+    subtitle="Pioneering innovative solutions in artificial intelligence, machine learning, and computational systems"
+  />
+
+  <div class="container">
+    <section id="about">
+      <h2>About</h2>
+      <div class="research-overview">
+        <p>The Advanced Computing Research Lab is a collaborative research environment dedicated to pushing the boundaries of artificial intelligence, machine learning, and computational systems. Our interdisciplinary team tackles fundamental challenges in computer science while developing practical solutions that impact society. We foster an inclusive culture of innovation, mentorship, and excellence, working on projects that span from theoretical foundations to real-world applications in natural language processing, computer vision, and ethical AI development.</p>
+      </div>
+      <h3 class="section-subheading">Principal Investigator</h3>
+      <div class="about-content">
+        <div class="profile-image">
+          {principalInvestigator.data.name.split(' ').map(n => n[0]).join('')}
+        </div>
+        <div class="bio">
+          <h3>{principalInvestigator.data.name}</h3>
+          <p><strong>{principalInvestigator.data.role}</strong></p>
+          <div class="bio-text">
+            {principalInvestigator.body}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="research">
+      <h2>Research Areas</h2>
+      <p class="section-subtitle">Our lab focuses on several cutting-edge areas of computer science</p>
+      <div class="research-grid">
+        {researchAreas.map(area => (
+          <ResearchCard
+            title={area.data.title}
+            description={area.data.description}
+            slug={area.slug}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="team">
+      <h2>Our Team</h2>
+      <p class="section-subtitle">Meet the brilliant minds behind our research</p>
+      <div class="team-grid">
+        {teamMembers.map(member => (
+          <TeamMember
+            name={member.data.name}
+            role={member.data.role}
+            email={member.data.email}
+            image={member.data.image}
+            slug={member.slug}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="publications">
+      <h2>Recent Publications</h2>
+      <p class="section-subtitle">Selected publications from our research group</p>
+      {publications.map(pub => (
+        <Publication 
+          title={pub.data.title}
+          authors={pub.data.authors}
+          venue={pub.data.venue}
+          pdf={pub.data.pdf}
+          code={pub.data.code}
+          dataset={pub.data.dataset}
+          demo={pub.data.demo}
+        />
+      ))}
+    </section>
+
+    <section id="software">
+      <h2>Software</h2>
+      <p class="section-subtitle">Open-source tools and libraries developed by our lab</p>
+      <div class="software-grid">
+        {software.map(sw => (
+          <SoftwareCard
+            title={sw.data.title}
+            description={sw.data.description}
+            github={sw.data.github}
+            documentation={sw.data.documentation}
+            language={sw.data.language}
+            stars={sw.data.stars}
+          />
+        ))}
+      </div>
+    </section>
+
+    <section id="opportunities">
+      <h2>Opportunities</h2>
+      <p class="section-subtitle">Join our team - current openings</p>
+      <div class="opportunities-list">
+        {opportunities.map(opp => (
+          <OpportunityCard
+            title={opp.data.title}
+            type={opp.data.type}
+            location={opp.data.location}
+            deadline={opp.data.deadline}
+            open={opp.data.open}
+          />
+        ))}
+      </div>
+      {opportunities.length === 0 && (
+        <p class="no-opportunities">No open positions at the moment. Please check back later or contact us about future opportunities.</p>
+      )}
+    </section>
+
+    <section id="locations">
+      <h2>How to Find Us</h2>
+      <p class="section-subtitle">We operate from three locations across the globe</p>
+      <div class="locations-grid">
+        <div class="location-card" data-location="usa">
+          <div class="location-flag">🇺🇸</div>
+          <h3>Stanford, USA</h3>
+          <p class="location-address">
+            Department of Computer Science<br>
+            Stanford University<br>
+            353 Jane Stanford Way<br>
+            Stanford, CA 94305
+          </p>
+          <div class="location-team">
+            <strong>Team Members:</strong>
+            <ul>
+              {locations.usa.map(member => (
+                <li>{member.data.name}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="location-contact">
+            <p><strong>Email:</strong> usa@researchlab.edu</p>
+            <p><strong>Phone:</strong> +1 (650) 123-4567</p>
+          </div>
+        </div>
+
+        <div class="location-card" data-location="uk">
+          <div class="location-flag">🇬🇧</div>
+          <h3>Cambridge, UK</h3>
+          <p class="location-address">
+            Computer Laboratory<br>
+            University of Cambridge<br>
+            15 JJ Thomson Avenue<br>
+            Cambridge CB3 0FD
+          </p>
+          <div class="location-team">
+            <strong>Team Members:</strong>
+            <ul>
+              {locations.uk.map(member => (
+                <li>{member.data.name}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="location-contact">
+            <p><strong>Email:</strong> uk@researchlab.edu</p>
+            <p><strong>Phone:</strong> +44 1223 123456</p>
+          </div>
+        </div>
+
+        <div class="location-card" data-location="germany">
+          <div class="location-flag">🇩🇪</div>
+          <h3>Munich, Germany</h3>
+          <p class="location-address">
+            Technical University of Munich<br>
+            Department of Informatics<br>
+            Boltzmannstraße 3<br>
+            85748 Garching bei München
+          </p>
+          <div class="location-team">
+            <strong>Team Members:</strong>
+            <ul>
+              {locations.germany.map(member => (
+                <li>{member.data.name}</li>
+              ))}
+            </ul>
+          </div>
+          <div class="location-contact">
+            <p><strong>Email:</strong> germany@researchlab.edu</p>
+            <p><strong>Phone:</strong> +49 89 12345678</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    <p>&copy; 2024 Advanced Computing Research Lab. All rights reserved.</p>
+  </footer>
 </Layout>
+
+<style>
+  .research-overview {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 3rem;
+  }
+
+  .research-overview p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  .section-subheading {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--primary);
+    font-weight: 600;
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .profile-image {
+    width: 100%;
+    aspect-ratio: 1;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  .bio h3 {
+    margin-bottom: 1rem;
+    font-size: 1.75rem;
+  }
+
+  .bio-text {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin-top: 1rem;
+  }
+
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+
+  .software-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+
+  .opportunities-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .no-opportunities {
+    text-align: center;
+    color: var(--text-light);
+    padding: 3rem;
+    background: var(--bg-alt);
+    border-radius: 12px;
+  }
+
+  .locations-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+  }
+
+  .location-card {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .location-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .location-flag {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .location-card h3 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .location-address {
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .location-team {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+  }
+
+  .location-team strong {
+    color: var(--text);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .location-team ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .location-team li {
+    color: var(--text-light);
+    padding: 0.25rem 0;
+    font-size: 0.9rem;
+  }
+
+  .location-contact {
+    color: var(--text-light);
+    font-size: 0.9rem;
+  }
+
+  .location-contact p {
+    margin: 0.5rem 0;
+  }
+
+  .location-contact strong {
+    color: var(--text);
+  }
+
+  footer {
+    background: var(--text);
+    color: white;
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  footer p {
+    opacity: 0.8;
+  }
+
+  @media (max-width: 768px) {
+    .research-overview p {
+      font-size: 1rem;
+    }
+
+    .about-content {
+      grid-template-columns: 1fr;
+    }
+
+    .software-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .locations-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+
+<script>
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href')!);
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+</script>
