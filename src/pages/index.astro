@@ -17,26 +17,27 @@ const opportunities = (await getCollection('opportunities')).filter(opp => opp.d
 
 const principalInvestigator = teamMembers[0];
 
-// Group team members by location
+// Group team members by location (members can appear in multiple locations)
 const locations = {
-  usa: teamMembers.filter(m => m.data.location === 'usa'),
-  uk: teamMembers.filter(m => m.data.location === 'uk'),
-  germany: teamMembers.filter(m => m.data.location === 'germany')
+  at: teamMembers.filter(m => m.data.locations?.includes('at')),
+  uk: teamMembers.filter(m => m.data.locations?.includes('uk')),
+  de: teamMembers.filter(m => m.data.locations?.includes('de'))
 };
 ---
 
-<Layout title="Computational Surface Science - The Maurer Research Group"></Layout>
+<Layout title="Computational Surface Science"></Layout>
   <Navigation />
   <Hero 
-    title="Computational Surface Science - The Maurer Research Group"
-    subtitle="Exploring the intersection of computation and surface science to drive innovation in materials and chemical processes."
+    title="The Maurer Computational Surface Science Group"
+    subtitle="Exploring the intersection of computational simulation and surface science to drive innovation in materials and chemical processes."
   />
 
   <div class="container">
     <section id="about">
-      <h2>About</h2>
+      <h2>Machine-learning-enabled Chemical Dynamics at Interfaces</h2>
+      <p>The past and the future of chemistry involve extreme conditions. Extreme conditions mean extremely high or low pressures and temperatures and extreme radiation and magnetic fields that are not easily realized on modern-day Earth. <b>In the past</b>, the molecules of life (proteins and nucleobases) were forged at a time when the world was extremely hot and no ozone layer was present to protect Earth’s surface from harmful intense UV radiation. Extreme conditions provided the driving force to create molecules that could resist those conditions and that formed the building blocks of our highly resilient genetic code. <b>In the future</b>, the technology and innovation base that will equip our fight against climate change and that will drive the transition to clean and abundant energy and food, crucially relies on exposing molecules to extreme conditions that are not naturally realised. By exposing molecules to extreme intensities of light, electric fields and magnetic fields, we can fundamentally change their behaviour. <b>Molecular simulation and chemical informatics play a crucial role</b> in enabling the study of chemistry under extreme conditions. The emergence of machine learning methods in the chemical and physical sciences has the potential to fundamentally transform our ability to predict and simulate chemical processes far away from equilibrium.</p>
       <div class="research-overview">
-        <p>The Maurer group focuses on the theory and simulation of molecular reactions on surfaces and at interfaces. We study the structure, composition, and reactivity of molecules interacting with solid surfaces. Using quantum mechanical simulation methods, such as Density-Functional Theory, our goal is to find a detailed understanding of the explicit molecular-level dynamics of molecular reactions as they appear in heterogeneous catalysis, photochemistry and nanotechnology. Our method development efforts target the efficient simulation of nonadiabatic and quantum effects in large surface-adsorbate systems, complex surface nanostructures, and gas-surface dynamics.</p>
+       <p><b>Our Research Vision</b> is to develop and apply new simulation methods and prediction tools that fuse machine learning (ML) and data-driven approaches with quantum mechanical (QM) electronic structure and dynamical simulation methods. Doing so will remove existing bottlenecks in simulation capabilities that limit the length and time scales and the complexity of chemical simulations. More importantly, hybrid ML/QM methods enable fundamentally new prediction approaches that defy the conventional structure-to-property paradigm that underpins modern chemical studies. The Maurer group applies newly developed ML-enabled research tools in the areas of high-throughput molecular design for organic electronics and functional interfaces, as well as the study of chemical dynamics triggered by extremely short or intense light and electromagnetic fields.</p>
       </div>
       <h3 class="section-subheading">Head of the Group</h3>
       <div class="about-content">
@@ -137,11 +138,14 @@ const locations = {
 
     <section id="locations">
       <h2>How to Find Us</h2>
-      <p class="section-subtitle">We operate from two international locations</p>
+      <p class="section-subtitle">The group is located across three international locations</p>
       <div class="locations-grid">
         <div class="location-card" data-location="at">
-          <div class="location-flag">at</div>
+          <div class="location-flag">🇦🇹</div>
           <h3>Vienna, Austria</h3>
+          <div class="location-image">
+            <img src="/src/images/vienna_location.jpg" alt="Vienna office" />
+          </div>          
           <p class="location-address">
             Computational Materials Physics<br>
             Faculty of Physics<br>
@@ -158,7 +162,7 @@ const locations = {
             </ul>
           </div>
           <div class="location-contact">
-            <p><strong>Web:</strong> https://cmp.univie.ac.at/</p>
+            <p><strong>Web:</strong> <a href="https://cmp.univie.ac.at/">Webpage of U Vienna</a></p>
             <p><strong>Phone:</strong> +43-1-4277-514 01</p>
           </div>
         </div>
@@ -166,6 +170,9 @@ const locations = {
         <div class="location-card" data-location="uk">
           <div class="location-flag">🇬🇧</div>
           <h3>Coventry, UK</h3>
+          <div class="location-image">
+            <img src="/src/images/warwick_location.jpg" alt="Warwick office" />
+          </div>          
           <p class="location-address">
             Centre for Computational and Theoretical Chemistry<br>
             Department of Chemistry<br>
@@ -181,14 +188,17 @@ const locations = {
             </ul>
           </div>
           <div class="location-contact">
-            <p><strong>Web:</strong> https://warwick.ac.uk/fac/sci/chemistry/research/catch/</p>
+            <p><strong>Web:</strong> <a href="https://warwick.ac.uk/fac/sci/chemistry/research/catch/">Webpage of U Warwick</a></p>
             <p><strong>Phone:</strong> +44 (0)2476 5 23228</p>
           </div>
         </div>
 
-        <div class="location-card" data-location="germany">
+        <div class="location-card" data-location="de">
           <div class="location-flag">🇩🇪</div>
           <h3>Göttingen, Germany</h3>
+          <div class="location-image">
+            <img src="/src/images/goettingen_location.jpg" alt="Göttingen office" />
+          </div>          
           <p class="location-address">
             Coming Soon! (starting in March 2026)<br>
             Chair of Theoretical Chemistry<br>
@@ -200,13 +210,13 @@ const locations = {
           <div class="location-team">
             <strong>Team Members:</strong>
             <ul>
-              {locations.germany.map(member => (
+              {locations.de.map(member => (
                 <li>{member.data.name}</li>
               ))}
             </ul>
           </div>
           <div class="location-contact">
-            <p><strong>Web:</strong> https://www.uni-goettingen.de/de/28451.html</p>
+            <p><strong>Web:</strong> <a href="https://www.uni-goettingen.de/de/28451.html">Webpage of U Göttingen</a></p>
             <p><strong>Phone:</strong> +49(551) 39-23102</p>
           </div>
         </div>
@@ -325,6 +335,32 @@ const locations = {
     border-color: var(--primary);
     transform: translateY(-4px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  }
+
+  .location-image {
+    width: 100%;
+    height: 200px;
+    margin: -1rem -1rem 1rem -1rem;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  .location-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.125rem;
+    opacity: 0.8;
   }
 
   .location-flag {

@@ -70,6 +70,52 @@ $$
 
 **Fixed:** Previously returned 404 errors due to base path configuration
 
+### 5. 3Dmol.js Molecular Viewer Support
+
+**What it does:** Embed interactive 3D molecular structures in research area pages.
+
+**Features:**
+- Load structures from PDB database
+- Multiple visualization styles (cartoon, stick, sphere, etc.)
+- Interactive rotation and zoom
+- Color by structure, element, or custom schemes
+- Add labels and surfaces
+- Support for proteins, small molecules, and other structures
+
+**How to use:**
+```html
+<div id="viewer-unique" style="width: 100%; height: 500px;"></div>
+<script>
+  $3Dmol.download('pdb:1AKE', viewer, {}, function() {
+    viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+    viewer.render();
+  });
+</script>
+```
+
+**Documentation:** [3DMOL_GUIDE.md](3DMOL_GUIDE.md)
+
+### 6. Location Card Images
+
+**What it does:** Add photos to location cards in "How to Find Us" section.
+
+**Features:**
+- Dedicated image space (200px height) at top of each location card
+- Responsive image sizing with `object-fit: cover`
+- Rounded corners matching card design
+- Fallback gradient background
+- Currently shows placeholders with instructions
+
+**How to use:**
+Place images in `public/images/` and update the HTML:
+```html
+<div class="location-image">
+  <img src="/images/vienna.jpg" alt="Vienna office" />
+</div>
+```
+
+**Documentation:** [LOCATION_IMAGES_GUIDE.md](LOCATION_IMAGES_GUIDE.md)
+
 ## Content Structure
 
 ### Team Members
@@ -91,6 +137,7 @@ $$
 **Features:**
 - Full Markdown content support
 - LaTeX equation support
+- 3Dmol.js molecular viewer support
 - Auto-display of assigned team members
 - Auto-display of related publications
 
@@ -168,6 +215,19 @@ $$
 - ✅ Added team member assignment to research areas
 - ✅ Created detailed documentation for all features
 
+### Session 4: Multiple Locations
+- ✅ Changed location from single to array-based
+- ✅ Team members can now have multiple locations
+- ✅ Updated all team member files and homepage filtering
+
+### Session 5: Advanced Features
+- ✅ Added 3Dmol.js molecular viewer support
+- ✅ Created MolecularViewer component
+- ✅ Added example molecular visualization to Computational Chemistry research area
+- ✅ Created comprehensive 3Dmol.js usage guide
+- ✅ Added image support to location cards on homepage
+- ✅ Created location images setup guide
+
 ## Current Sample Data
 
 ### Team Members
@@ -242,8 +302,12 @@ base: '/'
 2. **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Detailed setup and customization
 3. **[TROUBLESHOOTING.md](TROUBLESHOOTING.md)** - Common issues and fixes
 4. **[LATEX_GUIDE.md](LATEX_GUIDE.md)** - How to use LaTeX equations
-5. **[TEAM_ASSIGNMENT_GUIDE.md](TEAM_ASSIGNMENT_GUIDE.md)** - Assigning team members to research areas
-6. **[FEATURE_SUMMARY.md](FEATURE_SUMMARY.md)** - This file
+5. **[LATEX_TROUBLESHOOTING.md](LATEX_TROUBLESHOOTING.md)** - Detailed LaTeX debugging
+6. **[TEAM_ASSIGNMENT_GUIDE.md](TEAM_ASSIGNMENT_GUIDE.md)** - Assigning team members to research areas
+7. **[MULTIPLE_LOCATIONS_GUIDE.md](MULTIPLE_LOCATIONS_GUIDE.md)** - Multiple locations per team member
+8. **[3DMOL_GUIDE.md](3DMOL_GUIDE.md)** - Using molecular viewers in research pages
+9. **[LOCATION_IMAGES_GUIDE.md](LOCATION_IMAGES_GUIDE.md)** - Adding images to location cards
+10. **[FEATURE_SUMMARY.md](FEATURE_SUMMARY.md)** - This file
 
 ## Next Steps
 
@@ -263,7 +327,10 @@ To customize for your lab:
 ## Support
 
 All features are fully documented. Check the relevant guide for detailed instructions:
-- LaTeX not rendering? → [LATEX_GUIDE.md](LATEX_GUIDE.md)
+- LaTeX not rendering? → [LATEX_GUIDE.md](LATEX_GUIDE.md) or [LATEX_TROUBLESHOOTING.md](LATEX_TROUBLESHOOTING.md)
 - Team members not showing? → [TEAM_ASSIGNMENT_GUIDE.md](TEAM_ASSIGNMENT_GUIDE.md)
+- Multiple locations? → [MULTIPLE_LOCATIONS_GUIDE.md](MULTIPLE_LOCATIONS_GUIDE.md)
+- Molecular viewers? → [3DMOL_GUIDE.md](3DMOL_GUIDE.md)
+- Location images? → [LOCATION_IMAGES_GUIDE.md](LOCATION_IMAGES_GUIDE.md)
 - Links broken? → [TROUBLESHOOTING.md](TROUBLESHOOTING.md)
 - General setup? → [SETUP_GUIDE.md](SETUP_GUIDE.md)

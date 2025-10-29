@@ -13,7 +13,7 @@ const teamCollection = defineCollection({
     twitter: z.string().optional(),
     github: z.string().optional(),
     scholar: z.string().url().optional(),
-    location: z.enum(['usa', 'uk', 'germany']),
+    locations: z.array(z.enum(['at', 'uk', 'de'])), // Can have multiple locations
     researchInterests: z.array(z.string()).optional(),
     researchAreas: z.array(z.string()).optional(), // Slugs of research areas
     education: z.array(z.object({

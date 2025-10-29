@@ -3,7 +3,7 @@ name: "Dr. John Smith"
 role: "Senior Researcher"
 email: "john@university.edu"
 order: 2
-location: "uk"
+locations: ["uk", "at"]
 scholar: "https://scholar.google.com/citations?user=example2"
 github: "johnsmith"
 researchInterests:

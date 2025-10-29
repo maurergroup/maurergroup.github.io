@@ -1,0 +1,65 @@
+---
+interface Props {
+  pdb?: string;
+  pdbData?: string;
+  width?: string;
+  height?: string;
+  style?: string;
+  backgroundColor?: string;
+}
+
+const {
+  pdb,
+  pdbData,
+  width = "100%",
+  height = "400px",
+  style = "cartoon",
+  backgroundColor = "white"
+} = Astro.props;
+
+// Generate unique ID for this viewer
+const viewerId = `viewer-${Math.random().toString(36).substr(2, 9)}`;
+---
+
+<div id={viewerId} class="molecular-viewer" style={`width: ${width}; height: ${height};`}></div>
+
+<script define:vars={{ viewerId, pdb, pdbData, style, backgroundColor }}>
+  // Wait for 3Dmol to be available
+  if (typeof $3Dmol !== 'undefined') {
+    initViewer();
+  } else {
+    window.addEventListener('load', initViewer);
+  }
+
+  function initViewer() {
+    const element = document.getElementById(viewerId);
+    if (!element) return;
+
+    const config = { backgroundColor: backgroundColor };
+    const viewer = $3Dmol.createViewer(element, config);
+
+    if (pdb) {
+      // Load from PDB ID
+      $3Dmol.download(`pdb:${pdb}`, viewer, {}, function() {
+        viewer.setStyle({}, {[style]: {color: 'spectrum'}});
+        viewer.zoomTo();
+        viewer.render();
+      });
+    } else if (pdbData) {
+      // Load from PDB data string
+      viewer.addModel(pdbData, "pdb");
+      viewer.setStyle({}, {[style]: {color: 'spectrum'}});
+      viewer.zoomTo();
+      viewer.render();
+    }
+  }
+</script>
+
+<style>
+  .molecular-viewer {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: 2rem 0;
+    position: relative;
+  }
+</style>

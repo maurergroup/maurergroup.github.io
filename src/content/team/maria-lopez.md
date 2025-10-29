@@ -3,7 +3,7 @@ name: "Maria Lopez"
 role: "PhD Candidate"
 email: "maria@university.edu"
 order: 3
-location: "germany"
+locations: ["de"]
 github: "marialopez"
 twitter: "@maria_nlp"
 researchInterests:

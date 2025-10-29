@@ -1,13 +1,14 @@
 ---
-name: "Dr. Jane Researcher"
+name: "Univ.-Prof. Dr. Reinhard J. Maurer"
 role: "Principal Investigator"
-email: "jane@university.edu"
+email: "reinhard.maurer@univie.ac.at"
 order: 1
-location: "usa"
+locations: ["at", "de", "uk"]
+image: /src/images/reini2.jpg
 bio: "Dr. Researcher leads a dynamic team focused on advancing the frontiers of artificial intelligence and machine learning."
 website: "https://janeresearcher.com"
-scholar: "https://scholar.google.com/citations?user=example"
-github: "janeresearcher"
+scholar: "https://scholar.google.com/citations?user=jCF3JncAAAAJ&hl=en"
+github: "reinimaurer1"
 twitter: "@janeresearcher"
 researchInterests:
   - "Deep Learning"

@@ -200,9 +200,27 @@ Common features:
 ## Troubleshooting
 
 ### Math not rendering
+
+**Most common issue:** Configuration only in MDX integration, not in markdown section.
+
+The config must include plugins for BOTH `.md` and `.mdx` files:
+
+```javascript
+// astro.config.mjs
+export default defineConfig({
+  integrations: [mdx()],
+  markdown: {                    // Required for .md files!
+    remarkPlugins: [remarkMath],
+    rehypePlugins: [rehypeKatex]
+  }
+});
+```
+
+**Other checks:**
 1. Make sure you ran `npm install` after updating the config
 2. Restart the dev server (`npm run dev`)
 3. Check browser console for KaTeX CSS loading errors
+4. See [LATEX_TROUBLESHOOTING.md](LATEX_TROUBLESHOOTING.md) for detailed fixes
 
 ### Syntax errors
 - KaTeX is stricter than LaTeX - check the supported commands list
