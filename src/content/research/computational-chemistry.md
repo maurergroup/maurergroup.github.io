@@ -18,22 +18,34 @@ We use advanced simulation techniques to study how molecules interact and evolve
 
 Below is an interactive 3D visualization of Adenylate Kinase (PDB: 1AKE), an enzyme that catalyzes the transfer of phosphate groups:
 
-<div id="viewer-protein" style="width: 100%; height: 500px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 2rem 0;"></div>
+<div id="viewer-protein" style="width: 100%; height: 500px; border: 1px solid #e2e8f0; border-radius: 8px; margin: 2rem 0; position: relative; z-index: 1;"></div>
 
-<script>
-  window.addEventListener('load', function() {
-    if (typeof $3Dmol !== 'undefined') {
-      const element = document.getElementById('viewer-protein');
-      const config = { backgroundColor: 'white' };
-      const viewer = $3Dmol.createViewer(element, config);
+<script is:inline>
+  (function() {
+    function initViewer() {
+      if (typeof $3Dmol !== 'undefined') {
+        const element = document.getElementById('viewer-protein');
+        if (element && element.children.length === 0) {
+          const config = { backgroundColor: 'white' };
+          const viewer = $3Dmol.createViewer(element, config);
 
-      $3Dmol.download('pdb:1AKE', viewer, {}, function() {
-        viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
-        viewer.zoomTo();
-        viewer.render();
-      });
+          $3Dmol.download('pdb:1AKE', viewer, {}, function() {
+            viewer.setStyle({}, {cartoon: {color: 'spectrum'}});
+            viewer.zoomTo();
+            viewer.render();
+          });
+        }
+      }
     }
-  });
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(initViewer, 100);
+      });
+    } else {
+      setTimeout(initViewer, 100);
+    }
+  })();
 </script>
 
 *Try rotating the molecule with your mouse! This structure shows the enzyme in its open conformation.*

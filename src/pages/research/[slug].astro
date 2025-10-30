@@ -39,6 +39,11 @@ const assignedTeamMembers = allTeamMembers
   <Navigation />
 
   <div class="research-hero">
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="/videos/research-background.mp4" type="video/mp4">
+      <!-- Fallback for browsers that don't support video -->
+    </video>
+    <div class="hero-overlay"></div>
     <div class="hero-content">
       <div class="breadcrumb">
         <a href="/">Home</a> / <a href="/#research">Research</a> / {area.data.title}
@@ -105,14 +110,41 @@ const assignedTeamMembers = allTeamMembers
 
 <style>
   .research-hero {
+    position: relative;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
     padding: 4rem 2rem 3rem;
+    overflow: hidden;
+  }
+
+  .hero-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    object-fit: cover;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(102, 126, 234, 0.7);
+    z-index: 1;
   }
 
   .hero-content {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
+    z-index: 2;
   }
 
   .breadcrumb {

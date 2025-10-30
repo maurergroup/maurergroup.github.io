@@ -1,0 +1,285 @@
+name: Research Group Website
+description: Content management for research group website
+
+collections:
+  # Team Members Collection
+  - name: team
+    label: Team Members
+    path: src/content/team
+    extension: md
+    fields:
+      - name: name
+        label: Name
+        type: string
+        required: true
+
+      - name: role
+        label: Role
+        type: string
+        required: true
+
+      - name: email
+        label: Email
+        type: string
+        required: true
+
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+
+      - name: locations
+        label: Locations
+        type: list
+        options:
+          - value: usa
+            label: USA
+          - value: uk
+            label: UK
+          - value: de
+            label: Germany
+        required: true
+
+      - name: researchAreas
+        label: Research Areas
+        type: list
+        help: Select research areas this member works in
+        options:
+          - value: machine-learning
+            label: Machine Learning
+          - value: nlp
+            label: Natural Language Processing
+          - value: computational-chemistry
+            label: Computational Chemistry
+
+      - name: image
+        label: Profile Image
+        type: image
+        help: Upload a profile photo
+
+      - name: website
+        label: Website
+        type: string
+
+      - name: github
+        label: GitHub Username
+        type: string
+
+      - name: scholar
+        label: Google Scholar ID
+        type: string
+
+      - name: twitter
+        label: Twitter Handle
+        type: string
+
+      - name: researchInterests
+        label: Research Interests
+        type: list
+        of: string
+
+      - name: education
+        label: Education
+        type: list
+        fields:
+          - name: degree
+            label: Degree
+            type: string
+          - name: institution
+            label: Institution
+            type: string
+          - name: year
+            label: Year
+            type: number
+
+      - name: bio
+        label: Biography
+        type: rich-text
+        help: Full biography in markdown
+
+  # Research Areas Collection
+  - name: research
+    label: Research Areas
+    path: src/content/research
+    extension: md
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: description
+        label: Description
+        type: string
+        required: true
+        help: Short description for the card
+
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+
+      - name: heroVideo
+        label: Hero Video
+        type: string
+        help: Path to video file (e.g., /videos/research-background.mp4)
+
+      - name: body
+        label: Content
+        type: rich-text
+        required: true
+
+  # Publications Collection
+  - name: publications
+    label: Publications
+    path: src/content/publications
+    extension: md
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: authors
+        label: Authors
+        type: list
+        of: string
+        required: true
+
+      - name: venue
+        label: Venue
+        type: string
+        required: true
+        help: Journal or conference name
+
+      - name: date
+        label: Publication Date
+        type: date
+        required: true
+
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+
+      - name: pdf
+        label: PDF Link
+        type: string
+        help: URL to PDF file
+
+      - name: code
+        label: Code Repository
+        type: string
+        help: GitHub or other repository URL
+
+      - name: dataset
+        label: Dataset Link
+        type: string
+
+      - name: demo
+        label: Demo Link
+        type: string
+
+      - name: body
+        label: Abstract
+        type: rich-text
+
+  # Software Collection
+  - name: software
+    label: Software
+    path: src/content/software
+    extension: md
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+
+      - name: description
+        label: Description
+        type: string
+        required: true
+
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+
+      - name: github
+        label: GitHub URL
+        type: string
+
+      - name: docs
+        label: Documentation URL
+        type: string
+
+      - name: demo
+        label: Demo URL
+        type: string
+
+      - name: body
+        label: Detailed Description
+        type: rich-text
+
+  # Opportunities Collection
+  - name: opportunities
+    label: Job Opportunities
+    path: src/content/opportunities
+    extension: md
+    fields:
+      - name: title
+        label: Position Title
+        type: string
+        required: true
+
+      - name: type
+        label: Position Type
+        type: string
+        options:
+          - value: phd
+            label: PhD Position
+          - value: postdoc
+            label: Postdoc Position
+          - value: faculty
+            label: Faculty Position
+          - value: intern
+            label: Internship
+          - value: other
+            label: Other
+        required: true
+
+      - name: location
+        label: Location
+        type: string
+        options:
+          - value: usa
+            label: USA
+          - value: uk
+            label: UK
+          - value: de
+            label: Germany
+        required: true
+
+      - name: deadline
+        label: Application Deadline
+        type: date
+
+      - name: order
+        label: Display Order
+        type: number
+        required: true
+
+      - name: applyUrl
+        label: Application URL
+        type: string
+        help: Link to application form or email
+
+      - name: body
+        label: Position Description
+        type: rich-text
+        required: true
+
+media:
+  # Configure where uploaded images should be stored
+  output: public/images
+  publicPath: /images
