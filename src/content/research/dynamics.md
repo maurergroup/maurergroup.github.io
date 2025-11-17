@@ -1,12 +1,12 @@
 ---
-title: "Natural Language Processing"
+title: "Light- and Electron-Driven Dynamics at Surfaces and Nanostructured Interfaces"
 description: "Advancing language understanding through transformer architectures and multilingual models."
 order: 2
 ---
 
-Our Natural Language Processing (NLP) research aims to bridge the gap between human communication and machine understanding. We develop advanced models and systems that can comprehend, generate, and interact with human language across multiple modalities and languages.
+Explicit atomistic simulation of the dynamics of molecular reactions can help to gain valuable understanding of processes relevant to catalysis, surface chemistry, and surface scattering. Molecular dynamics on metal surfaces are especially interesting due to a variety of quantum and nonadiabatic effects that determine the qualitative and quantitative outcome of reactions. Such effects include non-adiabatic energy transfer between adsorbate motion and substrate electron-hole pair excitations leading to vibrational cooling of adsorbate motion or quantum nuclear effects that facilitate barrier crossings via tunnelling. Our current efforts are in developing methodology to include the above quantum effects in the study of non-equilibrium processes on surfaces.
 
-## Large Language Models
+## Point 1
 
 We investigate the fundamental capabilities and limitations of large language models:
 
@@ -14,7 +14,7 @@ We investigate the fundamental capabilities and limitations of large language mo
 - **Training Methodologies**: Exploring self-supervised learning, curriculum learning, and continual learning approaches
 - **Scaling Laws**: Understanding how model performance scales with size, data, and compute
 
-## Multilingual and Cross-lingual NLP
+## Point 2
 
 A major focus of our lab is making NLP technologies accessible across languages:
 
@@ -23,7 +23,7 @@ A major focus of our lab is making NLP technologies accessible across languages:
 - Creating multilingual benchmarks and datasets
 - Investigating linguistic diversity in model representations
 
-## Dialogue and Conversational AI
+## Point 3
 
 We create systems that can engage in natural, context-aware conversations:
 
@@ -32,22 +32,6 @@ We create systems that can engage in natural, context-aware conversations:
 - Multi-turn reasoning and context tracking
 - Personality and style-consistent generation
 
-## Information Extraction and Knowledge Graphs
-
-Our work in structured knowledge extraction includes:
-
-- Named entity recognition and relation extraction
-- Event detection and temporal reasoning
-- Question answering over structured and unstructured data
-- Knowledge graph construction and completion
-
-## Evaluation and Benchmarking
-
-We contribute to the development of robust evaluation methodologies:
-
-- Creating challenging benchmarks that test true language understanding
-- Developing evaluation metrics beyond simple accuracy
-- Studying model robustness and failure modes
 
 ## Applications
 

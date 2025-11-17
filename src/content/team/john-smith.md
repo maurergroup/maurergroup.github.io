@@ -23,3 +23,11 @@ Dr. Smith specializes in fairness and ethics in AI systems, with a focus on deve
 ## Research Focus
 
 His current projects investigate bias detection and mitigation in large language models, focusing on ensuring equitable outcomes across diverse demographic groups.
+
+## Selected Awards
+
+
+
+
+## Teaching
+

@@ -28,3 +28,6 @@ Maria's research focuses on multimodal learning and cross-lingual understanding 
 - Developing efficient cross-lingual transfer learning methods
 - Building multimodal datasets for under-resourced languages
 - Investigating cultural bias in multilingual models
+
+
+
