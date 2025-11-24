@@ -19,7 +19,7 @@ const teamCollection = defineCollection({
     education: z.array(z.object({
       degree: z.string(),
       institution: z.string(),
-      year: z.string()
+      year: z.union([z.string(), z.number()])
     })).optional()
   })
 });

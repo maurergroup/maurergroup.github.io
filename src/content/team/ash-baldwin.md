@@ -1,10 +1,10 @@
 ---
 name: "Ash Baldwin"
 role: "PhD Student"
-email: "ash.baldwin@warwick.ac.uk"
+email: "ash.baldwin@univie.ac.at"
 order: 29
 image: /images/ash-baldwin.jpg
-locations: ["uk"]
+locations: ["at"]
 researchAreas:
   - "computational-chemistry"
 researchInterests:

@@ -1,27 +1,84 @@
 <nav>
   <div class="nav-container">
     <a href="/" class="logo">The Maurer Research Group</a>
-    <ul class="nav-links">
-      <li><a href="/#about">About</a></li>
-      <li><a href="/#research">Research</a></li>
-      <li><a href="/#team">Team</a></li>
-      <li><a href="/#publications">Publications</a></li>
-      <li><a href="/#software">Software</a></li>
-      <li><a href="/#opportunities">Opportunities</a></li>
-      <li><a href="/#locations">Location</a></li>
-    </ul>
+    <div class="nav-right">
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#research">Research</a></li>
+        <li><a href="/#team">Team</a></li>
+        <li><a href="/#publications">Publications</a></li>
+        <li><a href="/#software">Software</a></li>
+        <li><a href="/#opportunities">Opportunities</a></li>
+        <li><a href="/#locations">Location</a></li>
+      </ul>
+      <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+        <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </div>
   </div>
 </nav>
+
+<script>
+  function initThemeToggle() {
+    const toggle = document.getElementById('theme-toggle');
+    if (!toggle) return;
+
+    const updateIcon = () => {
+      const theme = document.documentElement.getAttribute('data-theme');
+      const sunIcon = toggle.querySelector('.sun-icon');
+      const moonIcon = toggle.querySelector('.moon-icon');
+
+      if (theme === 'dark') {
+        sunIcon?.classList.add('active');
+        moonIcon?.classList.remove('active');
+      } else {
+        sunIcon?.classList.remove('active');
+        moonIcon?.classList.add('active');
+      }
+    };
+
+    toggle.addEventListener('click', () => {
+      const currentTheme = document.documentElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateIcon();
+    });
+
+    updateIcon();
+  }
+
+  // Initialize on page load
+  initThemeToggle();
+
+  // Reinitialize after navigation (for Astro view transitions)
+  document.addEventListener('astro:after-swap', initThemeToggle);
+</script>
 
 <style>
   nav {
     position: sticky;
     top: 0;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--bg);
     backdrop-filter: blur(10px);
     border-bottom: 1px solid var(--border);
     z-index: 100;
     padding: 1rem 0;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
   }
 
   .nav-container {
@@ -45,6 +102,12 @@
     opacity: 0.8;
   }
 
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
   .nav-links {
     display: flex;
     gap: 2rem;
@@ -62,10 +125,69 @@
     color: var(--primary);
   }
 
+  .theme-toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: var(--bg-alt);
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, transform 0.2s;
+    color: var(--text);
+  }
+
+  .theme-toggle:hover {
+    background: var(--border);
+    transform: scale(1.05);
+  }
+
+  .theme-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .sun-icon,
+  .moon-icon {
+    position: absolute;
+    transition: opacity 0.3s, transform 0.3s;
+  }
+
+  .sun-icon {
+    opacity: 0;
+    transform: rotate(90deg);
+  }
+
+  .sun-icon.active {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .moon-icon {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+
+  .moon-icon.active {
+    opacity: 0;
+    transform: rotate(-90deg);
+  }
+
   @media (max-width: 768px) {
     .nav-links {
       gap: 1rem;
       font-size: 0.875rem;
+    }
+
+    .nav-right {
+      gap: 1rem;
+    }
+
+    .theme-toggle {
+      width: 36px;
+      height: 36px;
     }
   }
 </style>

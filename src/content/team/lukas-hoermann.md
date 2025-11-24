@@ -1,10 +1,10 @@
 ---
 name: "Dr. Lukas Hoermann"
-role: "Marie Curie Research Fellow"
-email: "lukas.hoermann@warwick.ac.uk"
+role: "Postdoctoral Researcher"
+email: "lukas.hoermann@univie.ac.at"
 order: 11
 image: /images/lukas-hoermann.jpg
-locations: ["uk"]
+locations: ["at"]
 researchAreas:
   - "computational-chemistry"
 researchInterests:

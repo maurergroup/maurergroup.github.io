@@ -1,10 +1,10 @@
 ---
 name: "Alexander Spears"
 role: "PhD Student"
-email: "alexander.spears@warwick.ac.uk"
+email: "alexander.spears@univie.ac.at"
 order: 22
 image: /images/alexander-spears.jpg
-locations: ["uk"]
+locations: ["at"]
 researchAreas:
   - "computational-chemistry"
 researchInterests:
