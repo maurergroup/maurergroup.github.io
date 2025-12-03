@@ -1,6 +1,6 @@
 ---
 name: "Dr. Chen Qian"
-role: "Postdoctoral Research Fellow"
+role: "Postdoctoral Researcher"
 email: "chen.qian.3@warwick.ac.uk"
 order: 12
 image: /images/chen-qian.jpg

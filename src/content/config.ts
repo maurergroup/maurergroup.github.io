@@ -58,6 +58,7 @@ const softwareCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    logo: z.string().optional(),
     github: z.string().url().optional(),
     documentation: z.string().url().optional(),
     demo: z.string().url().optional(),
@@ -81,10 +82,25 @@ const opportunitiesCollection = defineCollection({
   })
 });
 
+const thesesCollection = defineCollection({
+  type: 'content',
+  schema: z.object({
+    author: z.string(),
+    title: z.string(),
+    year: z.number(),
+    month: z.string(),
+    university: z.string(),
+    supervisor: z.string(),
+    link: z.string().url().optional(),
+    order: z.number()
+  })
+});
+
 export const collections = {
   'team': teamCollection,
   'publications': publicationsCollection,
   'research': researchCollection,
   'software': softwareCollection,
-  'opportunities': opportunitiesCollection
+  'opportunities': opportunitiesCollection,
+  'theses': thesesCollection
 };

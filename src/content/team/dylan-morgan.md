@@ -7,6 +7,7 @@ image: /images/dylan-morgan.jpg
 locations: ["uk"]
 researchAreas:
   - "electronic-structure"
+  - "interfaces"
 researchInterests:
   - "Surface spectroscopy"
   - "Single atom magnets"

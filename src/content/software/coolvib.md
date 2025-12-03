@@ -2,6 +2,9 @@
 title: "Coolvib"
 description: "Calculate lifetime of adsorbate vibrations due to electron-hole pair excitations"
 order: 2
+logo: "/images/coolvib.png"
+github: "https://github.com/maurergroup/coolvib"
+documentation: "https://maurergroup.github.io/coolvib/"
 language: "Fortran/Python"
 ---
 

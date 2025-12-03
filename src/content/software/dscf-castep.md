@@ -2,6 +2,7 @@
 title: "ΔSCF-DFT and MolPDOS in CASTEP"
 description: "Calculate approximate excited states and molecular orbital projected density-of-states"
 order: 4
+documentation: "https://maurergroup.github.io/DeltaSCF_in_CASTEP_Manual/"
 language: "Fortran"
 ---
 

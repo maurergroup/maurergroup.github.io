@@ -1,6 +1,6 @@
 ---
 name: "Dr. Connor Box"
-role: "Postdoctoral Research Fellow"
+role: "Postdoctoral Researcher"
 email: "connor.box.1@warwick.ac.uk"
 order: 13
 image: /images/connor-box.jpg

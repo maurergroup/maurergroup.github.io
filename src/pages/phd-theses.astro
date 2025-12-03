@@ -1,0 +1,353 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navigation from '../components/Navigation.astro';
+import { getCollection } from 'astro:content';
+
+const theses = (await getCollection('theses')).sort((a, b) => b.data.order - a.data.order);
+---
+
+<Layout title="PhD Theses - Computational Surface Science">
+  <Navigation />
+
+  <div class="hero">
+    <div class="hero-content">
+      <div class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">→</span>
+        <span>PhD Theses</span>
+      </div>
+      <h1>PhD Theses</h1>
+      <p class="hero-description">Doctoral dissertations completed under the supervision of Prof. Reinhard J. Maurer</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="intro-text">
+      <p>Our research group has supervised numerous doctoral students who have made significant contributions to computational surface science, machine learning, and molecular dynamics. Below is a list of completed PhD theses from our group.</p>
+    </div>
+
+    <div class="theses-list">
+      {theses.map(thesis => (
+        <div class="thesis-card">
+          <div class="thesis-header">
+            <h2>{thesis.data.author}</h2>
+            <span class="thesis-year">{thesis.data.month} {thesis.data.year}</span>
+          </div>
+          <h3 class="thesis-title">{thesis.data.title}</h3>
+          <div class="thesis-meta">
+            <p><strong>University:</strong> {thesis.data.university}</p>
+            <p><strong>Supervisor:</strong> {thesis.data.supervisor}</p>
+          </div>
+          {thesis.data.link && (
+            <a href={thesis.data.link} class="pdf-link" target="_blank" rel="noopener noreferrer">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="16" y1="13" x2="8" y2="13"/>
+                <line x1="16" y1="17" x2="8" y2="17"/>
+                <polyline points="10 9 9 9 8 9"/>
+              </svg>
+              View Thesis
+            </a>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div class="stats-section">
+      <h2>Statistics</h2>
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-number">{theses.length}</div>
+          <div class="stat-label">PhD Graduates</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">{new Set(theses.map(t => t.data.year)).size}</div>
+          <div class="stat-label">Years</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">{theses.filter(t => t.data.year >= 2024).length}</div>
+          <div class="stat-label">Recent (2024+)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Computational Surface Science Group. All rights reserved.</p>
+      <a href="https://www.linkedin.com/in/reinhard-maurer-357803aa/" target="_blank" rel="noopener noreferrer" class="footer-linkedin" aria-label="LinkedIn Profile">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </div>
+  </footer>
+</Layout>
+
+<style>
+  .hero {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 6rem 2rem 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-content {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.9;
+  }
+
+  .breadcrumb a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 0.8;
+  }
+
+  .separator {
+    opacity: 0.6;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
+  .hero-description {
+    font-size: 1.25rem;
+    opacity: 0.95;
+    max-width: 800px;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 4rem;
+  }
+
+  .intro-text {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    margin-bottom: 3rem;
+    border-left: 4px solid var(--primary);
+  }
+
+  .intro-text p {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+    margin: 0;
+  }
+
+  .theses-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    margin-bottom: 4rem;
+  }
+
+  .thesis-card {
+    background: var(--bg-alt);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+    transition: all 0.3s;
+  }
+
+  .thesis-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  }
+
+  .thesis-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .thesis-header h2 {
+    color: var(--primary);
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .thesis-year {
+    background: var(--bg);
+    color: var(--text-light);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  .thesis-title {
+    font-size: 1.25rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+  }
+
+  .thesis-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .thesis-meta p {
+    color: var(--text-light);
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .thesis-meta strong {
+    color: var(--text);
+  }
+
+  .pdf-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--primary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .pdf-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+
+  .pdf-link:active {
+    transform: translateY(0);
+  }
+
+  .stats-section {
+    background: var(--bg-alt);
+    padding: 3rem;
+    border-radius: 12px;
+    border: 2px solid var(--border);
+  }
+
+  .stats-section h2 {
+    text-align: center;
+    color: var(--text);
+    margin-bottom: 2rem;
+  }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+  }
+
+  .stat-card {
+    text-align: center;
+    padding: 2rem;
+    background: var(--bg);
+    border-radius: 8px;
+    border: 1px solid var(--border);
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 1rem;
+    color: var(--text-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  footer {
+    background: var(--bg-alt);
+    color: var(--text-light);
+    padding: 3rem 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+  }
+
+  .footer-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  footer p {
+    opacity: 0.8;
+    margin: 0;
+  }
+
+  .footer-linkedin {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: var(--text-light);
+    background: var(--bg);
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    text-decoration: none;
+  }
+
+  .footer-linkedin:hover {
+    background: #0077b5;
+    color: white;
+    transform: scale(1.05);
+  }
+
+  .footer-linkedin:active {
+    transform: scale(0.95);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .hero-description {
+      font-size: 1rem;
+    }
+
+    .intro-text p {
+      font-size: 1rem;
+    }
+
+    .thesis-header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .stats-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

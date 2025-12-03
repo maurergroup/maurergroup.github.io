@@ -2,6 +2,9 @@
 title: "winak"
 description: "Global optimization and materials structure search using curvilinear coordinates"
 order: 3
+github: "https://github.com/maurergroup/winak"
+documentation: "https://maurergroup.github.io/winak/"
+logo: "/images/winak.png"
 language: "Python"
 ---
 

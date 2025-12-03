@@ -1,5 +1,5 @@
 ---
-title: "Structure of Graphene on Cu(111): Strain, Doping, and Interaction"
+title: "Structure of Graphene Grown on Cu(111): X-Ray Standing Wave Measurement and Density Functional Theory Prediction"
 authors:
   - "M. A. Stoodley"
   - "L. A. Rochford"
