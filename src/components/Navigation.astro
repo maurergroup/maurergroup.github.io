@@ -137,7 +137,6 @@
     align-items: center;
     justify-content: center;
     transition: background-color 0.3s, transform 0.2s;
-    color: var(--text);
   }
 
   .theme-toggle:hover {
@@ -158,6 +157,7 @@
   .sun-icon {
     opacity: 0;
     transform: rotate(90deg);
+    color: #f59e0b; /* Sun color (amber) for dark mode */
   }
 
   .sun-icon.active {
@@ -168,11 +168,17 @@
   .moon-icon {
     opacity: 1;
     transform: rotate(0deg);
+    color: var(--text); /* Dark color in light mode */
   }
 
   .moon-icon.active {
     opacity: 0;
     transform: rotate(-90deg);
+  }
+
+  /* In dark mode, make sun icon more visible */
+  [data-theme="dark"] .sun-icon {
+    color: #fbbf24;
   }
 
   @media (max-width: 768px) {

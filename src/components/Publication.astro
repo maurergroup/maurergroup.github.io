@@ -3,19 +3,39 @@ interface Props {
   title: string;
   authors: string[];
   venue: string;
+  year: number;
+  volume?: string;
+  pages?: string;
+  article?: string;
+  doi?: string;
   pdf?: string;
   code?: string;
   dataset?: string;
   demo?: string;
 }
 
-const { title, authors, venue, pdf, code, dataset, demo } = Astro.props;
+const { title, authors, venue, year, volume, pages, article, doi, pdf, code, dataset, demo } = Astro.props;
+
+// Build the citation string
+let citation = venue;
+if (volume) {
+  citation += ` ${volume}`;
+}
+if (article) {
+  citation += `, ${article}`;
+} else if (pages) {
+  citation += `, ${pages}`;
+}
+citation += ` (${year})`;
+if (doi) {
+  citation += `. DOI: ${doi}`;
+}
 ---
 
 <div class="publication">
   <div class="publication-title">{title}</div>
   <div class="publication-authors">{authors.join(', ')}</div>
-  <div class="publication-venue">{venue}</div>
+  <div class="publication-venue">{citation}</div>
   <div class="publication-links">
     {pdf && <a href={pdf} class="pub-link" target="_blank">PDF</a>}
     {code && <a href={code} class="pub-link" target="_blank">Code</a>}

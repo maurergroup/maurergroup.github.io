@@ -41,13 +41,23 @@ const locations = {
       <h3 class="section-subheading">Head of the Group</h3>
       <div class="about-content">
         <div class="profile-image">
-          {principalInvestigator.data.name.split(' ').map(n => n[0]).join('')}
+          {principalInvestigator.data.image ? (
+            <img src={principalInvestigator.data.image} alt={principalInvestigator.data.name} />
+          ) : (
+            principalInvestigator.data.name.split(' ').map(n => n[0]).join('')
+          )}
         </div>
         <div class="bio">
           <h3>{principalInvestigator.data.name}</h3>
           <p><strong>{principalInvestigator.data.role}</strong></p>
           <div class="bio-text">
-            {principalInvestigator.body}
+            <p>
+              Prof. Dr. Reinhard J. Maurer leads the Computational Surface Science Group, focusing on theoretical and computational methods to understand the chemistry and physics of surfaces and interfaces. He is a Professor of Computational Chemistry at the University of Warwick (UK), Professor of Computational Materials Discovery at the University of Vienna (Austria), and will be soon be joining the University of Göttingen (Germany) as the Alexander-von-Humboldt Professor of Theoretical Chemistry.
+            </p>
+            <p>
+              His research combines electronic structure theory, molecular and quantum dynamics, and machine learning methods to study quantum phenomena at surfaces with applications in photocatalysis, nanotechnology, and electrochemistry.
+            </p>
+            <p><a href="/team/reinhard-maurer">Read full profile →</a></p>
           </div>
         </div>
       </div>
@@ -85,12 +95,17 @@ const locations = {
 
     <section id="publications">
       <h2>Recent Publications</h2>
-      <p class="section-subtitle">Selected publications from our research group</p>
+      <p class="section-subtitle">Selected publications from our research group. You'll find a full list on <a href="https://scholar.google.com/citations?user=jCF3JncAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
       {publications.map(pub => (
-        <Publication 
+        <Publication
           title={pub.data.title}
           authors={pub.data.authors}
           venue={pub.data.venue}
+          year={pub.data.year}
+          volume={pub.data.volume}
+          pages={pub.data.pages}
+          article={pub.data.article}
+          doi={pub.data.doi}
           pdf={pub.data.pdf}
           code={pub.data.code}
           dataset={pub.data.dataset}
@@ -127,6 +142,7 @@ const locations = {
             location={opp.data.location}
             deadline={opp.data.deadline}
             open={opp.data.open}
+            slug={opp.slug}
           />
         ))}
       </div>
@@ -162,7 +178,7 @@ const locations = {
           </div>
           <div class="location-contact">
             <p><strong>Web:</strong> <a href="https://cmp.univie.ac.at/">Webpage of U Vienna</a></p>
-            <p><strong>Phone:</strong> +43-1-4277-514 01</p>
+            <p><strong>Phone:</strong> +43-1-4277-733 23</p>
           </div>
         </div>
 
@@ -269,6 +285,13 @@ const locations = {
     color: white;
     font-size: 4rem;
     font-weight: 700;
+    overflow: hidden;
+  }
+
+  .profile-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 
   .bio h3 {

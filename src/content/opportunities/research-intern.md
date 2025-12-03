@@ -1,10 +1,10 @@
 ---
 title: "Summer Research Internship 2025"
 type: "intern"
-location: "any"
+location: "uk"
 deadline: 2025-03-31
-open: true
-order: 3
+open: false
+order: 4
 ---
 
 We offer summer research internships for undergraduate and master's students interested in AI research.

@@ -1,0 +1,296 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+
+export async function getStaticPaths() {
+  const opportunities = await getCollection('opportunities');
+  return opportunities.map(opportunity => ({
+    params: { slug: opportunity.slug },
+    props: { opportunity }
+  }));
+}
+
+const { opportunity } = Astro.props;
+const { Content } = await opportunity.render();
+
+const typeLabels: Record<string, string> = {
+  phd: 'PhD Position',
+  postdoc: 'Postdoc',
+  engineer: 'Research Engineer',
+  intern: 'Internship',
+  visiting: 'Visiting Researcher'
+};
+
+const locationLabels: Record<string, string> = {
+  at: 'Austria',
+  uk: 'United Kingdom',
+  de: 'Germany'
+};
+
+const formatDeadline = (date: Date) => {
+  return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+};
+---
+
+<Layout title={opportunity.data.title}>
+  <Navigation />
+
+  <div class="opportunity-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <a href="/#opportunities">Opportunities</a>
+        <span class="separator">›</span>
+        <span class="current">{opportunity.data.title}</span>
+      </nav>
+
+      <header class="page-header">
+        <div class="header-content">
+          <h1>{opportunity.data.title}</h1>
+          <div class="meta-info">
+            <span class="meta-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                <circle cx="12" cy="7" r="4"/>
+              </svg>
+              {typeLabels[opportunity.data.type]}
+            </span>
+            <span class="meta-item">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+              {locationLabels[opportunity.data.location]}
+            </span>
+            {opportunity.data.deadline && (
+              <span class="meta-item deadline">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10"/>
+                  <polyline points="12 6 12 12 16 14"/>
+                </svg>
+                Application Deadline: {formatDeadline(opportunity.data.deadline)}
+              </span>
+            )}
+            {opportunity.data.open && (
+              <span class="status-badge open">Open Position</span>
+            )}
+            {!opportunity.data.open && (
+              <span class="status-badge closed">Position Closed</span>
+            )}
+          </div>
+        </div>
+      </header>
+
+      <article class="opportunity-content">
+        <Content />
+      </article>
+
+      <div class="back-link">
+        <a href="/#opportunities">← Back to all opportunities</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Computational Surface Science Group. All rights reserved.</p>
+  </footer>
+</Layout>
+
+<style>
+  .opportunity-page {
+    min-height: calc(100vh - 4rem);
+    padding: 2rem 0 4rem;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+
+  .breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 0.8;
+  }
+
+  .breadcrumb .separator {
+    color: var(--border);
+  }
+
+  .breadcrumb .current {
+    color: var(--text);
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+    line-height: 1.2;
+  }
+
+  .meta-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-light);
+    font-size: 1rem;
+  }
+
+  .meta-item svg {
+    flex-shrink: 0;
+    color: var(--primary);
+  }
+
+  .deadline {
+    color: #f59e0b;
+    font-weight: 600;
+  }
+
+  .status-badge {
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .status-badge.open {
+    background: #10b981;
+    color: white;
+  }
+
+  .status-badge.closed {
+    background: #ef4444;
+    color: white;
+  }
+
+  .opportunity-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text);
+  }
+
+  .opportunity-content :global(h2) {
+    font-size: 1.75rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .opportunity-content :global(h3) {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .opportunity-content :global(ul),
+  .opportunity-content :global(ol) {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .opportunity-content :global(li) {
+    margin: 0.5rem 0;
+  }
+
+  .opportunity-content :global(p) {
+    margin: 1rem 0;
+  }
+
+  .opportunity-content :global(strong) {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  .opportunity-content :global(a) {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--primary);
+    transition: opacity 0.3s;
+  }
+
+  .opportunity-content :global(a:hover) {
+    opacity: 0.8;
+  }
+
+  .back-link {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .back-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+
+  .back-link a:hover {
+    gap: 0.75rem;
+  }
+
+  footer {
+    background: var(--bg-alt);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+  }
+
+  @media (max-width: 768px) {
+    .page-header h1 {
+      font-size: 2rem;
+    }
+
+    .meta-info {
+      gap: 1rem;
+    }
+
+    .opportunity-content {
+      font-size: 1rem;
+    }
+
+    .opportunity-content :global(h2) {
+      font-size: 1.5rem;
+    }
+
+    .opportunity-content :global(h3) {
+      font-size: 1.25rem;
+    }
+  }
+</style>

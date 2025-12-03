@@ -5,11 +5,12 @@ interface Props {
   location: string;
   deadline?: Date;
   open: boolean;
+  slug: string;
 }
 
-const { title, type, location, deadline, open } = Astro.props;
+const { title, type, location, deadline, open, slug } = Astro.props;
 
-const typeLabels = {
+const typeLabels: Record<string, string> = {
   phd: 'PhD Position',
   postdoc: 'Postdoc',
   engineer: 'Research Engineer',
@@ -17,12 +18,10 @@ const typeLabels = {
   visiting: 'Visiting Researcher'
 };
 
-const locationLabels = {
-  usa: 'USA',
-  uk: 'UK',
-  germany: 'Germany',
-  remote: 'Remote',
-  any: 'Multiple Locations'
+const locationLabels: Record<string, string> = {
+  at: 'Austria',
+  uk: 'United Kingdom',
+  de: 'Germany'
 };
 
 const formatDeadline = (date: Date) => {
@@ -30,7 +29,7 @@ const formatDeadline = (date: Date) => {
 };
 ---
 
-<div class="opportunity-card">
+<a href={`/opportunities/${slug}`} class="opportunity-card">
   <div class="opportunity-header">
     <h3>{title}</h3>
     {open && <span class="open-badge">Open</span>}
@@ -61,15 +60,24 @@ const formatDeadline = (date: Date) => {
     )}
   </div>
   <slot />
-</div>
+</a>
 
 <style>
   .opportunity-card {
+    display: block;
     background: var(--bg-alt);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border);
     border-left: 4px solid var(--primary);
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .opportunity-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left-color: var(--primary);
   }
 
   .opportunity-header {

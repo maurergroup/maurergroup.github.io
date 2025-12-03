@@ -39,9 +39,8 @@ const assignedTeamMembers = allTeamMembers
   <Navigation />
 
   <div class="research-hero">
-    <video class="hero-video" autoplay muted loop playsinline>
-      <source src="/videos/research-background.mp4" type="video/mp4">
-      <!-- Fallback for browsers that don't support video -->
+    <video class="hero-video" autoplay muted loop playsinline loading="lazy">
+  <source src={`/videos/${area.slug}.mp4`} type="video/mp4">
     </video>
     <div class="hero-overlay"></div>
     <div class="hero-content">

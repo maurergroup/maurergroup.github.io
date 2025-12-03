@@ -14,16 +14,21 @@ const { title, subtitle } = Astro.props;
 
 <style>
   .hero {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/images/hotelectrons_banner.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     color: white;
     padding: 6rem 2rem;
     text-align: center;
+    position: relative;
   }
 
   .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
   }
 
   .hero p {
@@ -31,6 +36,7 @@ const { title, subtitle } = Astro.props;
     max-width: 700px;
     margin: 0 auto;
     opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
   }
 
   @media (max-width: 768px) {

@@ -31,6 +31,10 @@ const publicationsCollection = defineCollection({
     authors: z.array(z.string()),
     venue: z.string(),
     year: z.number(),
+    volume: z.string().optional(),
+    pages: z.string().optional(),
+    article: z.string().optional(),
+    doi: z.string().optional(),
     pdf: z.string().url().optional(),
     code: z.string().url().optional(),
     dataset: z.string().url().optional(),
@@ -69,7 +73,7 @@ const opportunitiesCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     type: z.enum(['phd', 'postdoc', 'engineer', 'intern', 'visiting']),
-    location: z.enum(['usa', 'uk', 'germany', 'remote', 'any']),
+    location: z.enum(['at', 'uk', 'de']),
     deadline: z.date().optional(),
     open: z.boolean(),
     order: z.number()
