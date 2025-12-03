@@ -12,26 +12,9 @@ We use advanced simulation techniques to study how molecules interact and evolve
 
 - **Density Functional Theory (DFT)**: Quantum mechanical calculations of electronic structure
 - **Molecular Dynamics Simulations**: Tracking atomic motions to understand reaction mechanisms
-- **Free Energy Calculations**: Predicting thermodynamic properties and binding affinities
+- **Comprehensive surface structure determination**: Predicting stable phases and thermodynamic properties at interfaces and in 2D materials
 
-
-## Catalysis and Surface Chemistry
-
-We investigate how molecules interact with catalyst surfaces to enable chemical transformations:
-
-- Adsorption and desorption mechanisms
-- Reaction pathway analysis
-- Design of novel catalytic materials
-
-## Materials Design
-
-Our work extends to designing new materials with specific properties:
-
-- **2D Materials**: Graphene, transition metal dichalcogenides, and other layered structures
-- **Metal-Organic Frameworks (MOFs)**: Porous materials for gas storage and separation
-- **Photocatalysts**: Materials for solar energy conversion
-
-## Machine Learning for Chemistry
+## Machine Learning for Surface Chemistry
 
 We develop ML models to accelerate computational chemistry:
 
@@ -51,9 +34,17 @@ where $E_i$ is the atomic energy contribution and $\mathcal{N}_i$ represents the
 
 - Developing machine learning potentials for catalytic reactions
 - Simulating charge transfer at electrode-electrolyte interfaces
-- Predicting crystal structures of pharmaceutical compounds
-- Understanding photocatalytic water splitting mechanisms
+- Inverse design of molecules and materials with tailored electronic and optical properties
+- Studying the controlled growth of two-dimensional materials
 
 ## Computational Resources
 
 Our research leverages high-performance computing clusters with thousands of CPU cores and GPU acceleration for quantum chemistry calculations and large-scale molecular dynamics simulations.
+
+## Collaborations
+
+- Dr. David Duncan, University of Nottingham
+- Dr. Alex Saywell, University of Nottingham
+- Prof. Julie MacPherson, University of Warwick
+- Prof. Michael Gottfried, University of Marburg
+- Christian Wagner, Helmholtz Research Centre Jülich
