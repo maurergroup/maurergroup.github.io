@@ -2,6 +2,7 @@
 title: "Design of nanostructured interfaces"
 description: "Using computational methods to study molecular structures, reactions, and materials properties."
 order: 3
+image: "/images/graphene.png"
 ---
 
 Fundamental to the design of functionalized surfaces and optically or electronically active hybrid interfaces is the understanding of the underlying interactions between substrate and adsorbate. Surface-sensitive spectroscopic methods such as x-ray photoelectron spectroscopy (XPS), near-edge x-ray absorption fine-structure spectroscopy (NEXAFS), x-ray standing wave measurements (XSW) and Scanning Tunneling Microscopy and Spectroscopy (STM/STS), play a key role in the characterization of adsorbate structure. These methods, together with nonlinear and ultrafast spectroscopy techniques such as Sum-Frequency Generation and Two-Photon-Photoemission have become the workhorses for the study of nanofunctionalised surfaces and 2D materials. We develop and apply techniques to simulate surface spectroscopy to enable the assignment of spectroscopic signatures to structural moieties. To describe ultrafast excited-state dynamics, we have developed a Density-Functional Theory-based method to calculate electronically excited states of metal-surface adsorbed molecules

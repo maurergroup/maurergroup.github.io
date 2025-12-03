@@ -6,7 +6,8 @@ order: 10
 image: /images/nils-hertl.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "dynamics"
+  - "machine-learning"
 scholar: "https://scholar.google.com/citations?user=I65S8ZQAAAAJ&hl=en&oi=ao"
 researchInterests:
   - "Condensed matter theory"

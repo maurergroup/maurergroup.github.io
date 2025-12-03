@@ -6,7 +6,8 @@ order: 29
 image: /images/ash-baldwin.jpg
 locations: ["at"]
 researchAreas:
-  - "computational-chemistry"
+  - "electronic-structure"
+  - "dynamics" 
 researchInterests:
   - "Quantum correlation effects"
   - "Ultra-fast surface dynamics"

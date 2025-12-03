@@ -6,7 +6,7 @@ order: 24
 image: /images/henry-snowden.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "dynamics"
 researchInterests:
   - "Photocatalysis"
   - "Excited electron dynamics"

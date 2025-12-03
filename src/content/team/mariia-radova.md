@@ -7,7 +7,6 @@ image: /images/mariia-radova.jpg
 locations: ["uk"]
 researchAreas:
   - "machine-learning"
-  - "computational-chemistry"
 researchInterests:
   - "Graph neural networks"
   - "Molecular structure prediction"

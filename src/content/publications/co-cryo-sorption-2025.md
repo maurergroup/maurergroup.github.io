@@ -1,12 +1,14 @@
 ---
-title: "CO Cryo-Sorption Spectroscopy: Quantifying Local Electrostatics in Heterogeneous Catalysts"
+title: "CO Cryo-Sorption as a Surface-Sensitive Spectroscopic Probe of the Active Site Density of Single-Atom Catalysts"
 authors:
-  - "S. Ringe"
-  - "R. J. Maurer"
+  - "B. Jeong et al."
 venue: "Angewandte Chemie International Edition"
 year: 2025
+doi: "10.1002/anie.202420673"
+volume: "64"
+article: "e202420673"
 pdf: "https://doi.org/10.1002/anie.202420673"
-date: 2025-01-01
+date: 2025-01-09
 order: 6
 ---
 

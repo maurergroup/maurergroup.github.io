@@ -1,14 +1,15 @@
 ---
-title: "Vibrational Energy Dissipation in Noncontact Atomic Force Microscopy Junctions"
+title: "Vibrational Energy Dissipation in Noncontact Single-Molecule Junctions Governed by Local Geometry and Electronic Structure"
 authors:
-  - "A. Ge"
-  - "B. Rudshteyn"
-  - "J. Zhu"
+  - "L. Hörmann"
   - "R. J. Maurer"
 venue: "JACS Au"
 year: 2025
+volume: "5"
+pages: "5027-5038"
+doi: "10.1021/jacsau.5c00931"
 pdf: "https://doi.org/10.1021/jacsau.5c00931"
-date: 2025-01-01
+date: 2025-09-15
 ---
 
 This recent JACS Au publication provides groundbreaking insights into vibrational energy dissipation in noncontact atomic force microscopy (AFM) junctions, revealing the quantum mechanical mechanisms underlying energy transfer in nanoscale systems.

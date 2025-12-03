@@ -6,7 +6,8 @@ order: 22
 image: /images/alexander-spears.jpg
 locations: ["at"]
 researchAreas:
-  - "computational-chemistry"
+  - "dynamics"
+  - "machine-learning"
 researchInterests:
   - "Light-driven hydrogen evolution"
   - "Ultrafast laser pulse dynamics"

@@ -6,7 +6,8 @@ order: 26
 image: /images/yc-wong.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "electronic-structure"
+  - "machine-learning"
 ---
 
 YC Wong is a PhD student in the Computational Surface Science Group, contributing to research in theoretical and computational chemistry.

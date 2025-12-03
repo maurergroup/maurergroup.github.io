@@ -6,12 +6,13 @@ interface Props {
   documentation?: string;
   language?: string;
   stars?: number;
+  slug: string;
 }
 
-const { title, description, github, documentation, language, stars } = Astro.props;
+const { title, description, github, documentation, language, stars, slug } = Astro.props;
 ---
 
-<div class="software-card">
+<a href={`/software/${slug}`} class="software-card">
   <div class="software-header">
     <h3>{title}</h3>
     {stars && (
@@ -44,15 +45,19 @@ const { title, description, github, documentation, language, stars } = Astro.pro
       </a>
     )}
   </div>
-</div>
+</a>
 
 <style>
   .software-card {
+    display: block;
     background: var(--bg-alt);
     padding: 2rem;
     border-radius: 12px;
     border: 1px solid var(--border);
     transition: transform 0.3s, box-shadow 0.3s;
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
   }
 
   .software-card:hover {

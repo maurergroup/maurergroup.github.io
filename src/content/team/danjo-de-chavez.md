@@ -6,7 +6,7 @@ order: 14
 image: /images/danjo-de-chavez.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "electronic-structure"
   - "machine-learning"
 researchInterests:
   - "Computational and quantum chemistry"

@@ -1,14 +1,18 @@
 ---
-title: "Fine-tuning foundation models for joint analysis inference of structure and composition in scanning transmission electron microscopy"
+title: "Fine-tuning foundation models of materials interatomic potentials with frozen transfer learning"
 authors:
   - "M. Radova"
   - "W. G. Stark"
   - "C. S. Allen"
   - "R. J. Maurer"
+  - "A. P. Bartok"
 venue: "npj Computational Materials"
 year: 2025
+volume: "11"
+article: "237"
+doi: "10.1038/s41524-025-01727-x"
 pdf: "https://doi.org/10.1038/s41524-025-01727-x"
-date: 2025-01-01
+date: 2025-07-18
 ---
 
 This cutting-edge npj Computational Materials paper demonstrates how foundation models can be fine-tuned for advanced analysis of scanning transmission electron microscopy (STEM) images, enabling simultaneous determination of both atomic structure and chemical composition with unprecedented accuracy.

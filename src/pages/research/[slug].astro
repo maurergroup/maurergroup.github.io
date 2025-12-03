@@ -54,9 +54,20 @@ const assignedTeamMembers = allTeamMembers
 
   <div class="container">
     <div class="content-section">
-      <div class="main-content">
-        <Content />
-      </div>
+      {area.data.image ? (
+        <div class="content-with-image">
+          <div class="main-content">
+            <Content />
+          </div>
+          <div class="image-sidebar">
+            <img src={area.data.image} alt={area.data.title} class="research-image" />
+          </div>
+        </div>
+      ) : (
+        <div class="main-content">
+          <Content />
+        </div>
+      )}
     </div>
 
     {assignedTeamMembers.length > 0 && (
@@ -183,6 +194,26 @@ const assignedTeamMembers = allTeamMembers
 
   .content-section {
     margin-bottom: 4rem;
+  }
+
+  .content-with-image {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .image-sidebar {
+    position: sticky;
+    top: 2rem;
+  }
+
+  .research-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
   }
 
   .main-content {
@@ -356,6 +387,16 @@ const assignedTeamMembers = allTeamMembers
 
     .main-content {
       font-size: 1rem;
+    }
+
+    .content-with-image {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .image-sidebar {
+      position: static;
+      order: -1;
     }
   }
 </style>

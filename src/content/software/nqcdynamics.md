@@ -3,7 +3,7 @@ title: "NQCDynamics.jl"
 description: "Simulating nonadiabatic quantum dynamics using classical trajectory methods"
 order: 1
 github: "https://github.com/NQCD/NQCDynamics.jl"
-docs: "https://nqcd.github.io/NQCDynamics.jl/stable/"
+documentation: "https://nqcd.github.io/NQCDynamics.jl/stable/"
 language: "Julia"
 ---
 

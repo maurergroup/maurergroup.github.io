@@ -6,7 +6,8 @@ order: 23
 image: /images/xuexun-lu.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "dynamics"
+  - "machine-learning"
 researchInterests:
   - "Non-Markovian memory effects"
   - "Molecular dynamics"

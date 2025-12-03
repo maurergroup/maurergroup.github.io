@@ -6,7 +6,6 @@ order: 12
 image: /images/chen-qian.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
   - "machine-learning"
 scholar: "https://scholar.google.com/citations?user=x90kyHYAAAAJ&hl=zh-CN&oi=sra"
 researchInterests:

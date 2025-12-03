@@ -6,7 +6,7 @@ order: 28
 image: /images/matt-larkin.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "dynamics"
 ---
 
 Matt Larkin is a PhD student in the Computational Surface Science Group who joined in October 2024.

@@ -1,15 +1,20 @@
 ---
-title: "Nonadiabatic Quantum Dynamics of Molecular Scattering from Surfaces with Electronic Friction"
+title: "Nonadiabatic Quantum Dynamics of Molecules Scattering from Metal Surfaces"
 authors:
-  - "C. L. Box"
-  - "Y. Zhang"
-  - "R. Yin"
-  - "B. Jiang"
+  - "R. J. Preston"
+  - "Y. Ke"
+  - "S. L. Rudge"
+  - "N. Hertl"
+  - "R. Borrelli"
   - "R. J. Maurer"
+  - "M. Thoss"
 venue: "Journal of Chemical Theory and Computation"
 year: 2025
+volume: "21"
+pages: "1054-1063"
+doi: "10.1021/acs.jctc.4c01586"
 pdf: "https://doi.org/10.1021/acs.jctc.4c01586"
-date: 2025-01-01
+date: 2025-01-28
 ---
 
 This Journal of Chemical Theory and Computation paper presents a comprehensive theoretical and computational framework for simulating nonadiabatic quantum dynamics in molecule-surface scattering, incorporating electronic friction effects to capture energy dissipation to substrate electrons.

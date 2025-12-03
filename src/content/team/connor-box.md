@@ -6,7 +6,8 @@ order: 13
 image: /images/connor-box.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "electronic-structure"
+  - "dynamics"
 scholar: "https://scholar.google.com/citations?user=USme7JQAAAAJ&hl=en"
 researchInterests:
   - "Light-matter interactions"

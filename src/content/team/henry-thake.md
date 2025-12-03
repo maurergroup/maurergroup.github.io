@@ -6,7 +6,8 @@ order: 27
 image: /images/henry-thake.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "interfaces"
+  - "electronic-structure"
   - "machine-learning"
 researchInterests:
   - "Defective graphene structures"

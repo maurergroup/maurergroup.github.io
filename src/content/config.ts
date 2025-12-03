@@ -48,7 +48,8 @@ const researchCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
-    order: z.number()
+    order: z.number(),
+    image: z.string().optional()
   })
 });
 

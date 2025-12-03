@@ -1,0 +1,312 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navigation from '../../components/Navigation.astro';
+import { getCollection } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+
+export const getStaticPaths = (async () => {
+  const softwareItems = await getCollection('software');
+  return softwareItems.map(software => ({
+    params: { slug: software.slug },
+    props: { software }
+  }));
+}) satisfies GetStaticPaths;
+
+const { software } = Astro.props;
+const { Content } = await software.render();
+---
+
+<Layout title={`${software.data.title} - Software`}>
+  <Navigation />
+
+  <div class="software-page">
+    <div class="container">
+      <nav class="breadcrumb">
+        <a href="/">Home</a>
+        <span class="separator">›</span>
+        <a href="/#software">Software</a>
+        <span class="separator">›</span>
+        <span class="current">{software.data.title}</span>
+      </nav>
+
+      <header class="page-header">
+        <div class="header-content">
+          <h1>{software.data.title}</h1>
+          <p class="description">{software.data.description}</p>
+          {software.data.language && (
+            <div class="language-tag">{software.data.language}</div>
+          )}
+        </div>
+        <div class="header-links">
+          {software.data.github && (
+            <a href={software.data.github} target="_blank" class="primary-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              </svg>
+              View on GitHub
+            </a>
+          )}
+          {software.data.documentation && (
+            <a href={software.data.documentation} target="_blank" class="primary-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+              </svg>
+              Documentation
+            </a>
+          )}
+          {software.data.pypi && (
+            <a href={software.data.pypi} target="_blank" class="primary-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm0 2c5.514 0 10 4.486 10 10s-4.486 10-10 10S2 17.514 2 12 6.486 2 12 2z"/>
+              </svg>
+              PyPI
+            </a>
+          )}
+          {software.data.npm && (
+            <a href={software.data.npm} target="_blank" class="primary-link">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M0 0v24h24V0H0zm21 21H3V3h18v18z"/>
+              </svg>
+              npm
+            </a>
+          )}
+        </div>
+      </header>
+
+      <article class="software-content">
+        <Content />
+      </article>
+
+      <div class="back-link">
+        <a href="/#software">← Back to Software</a>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Computational Surface Science Group. All rights reserved.</p>
+  </footer>
+</Layout>
+
+<style>
+  .software-page {
+    min-height: calc(100vh - 4rem);
+    padding: 2rem 0 4rem;
+  }
+
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+    font-size: 0.875rem;
+    color: var(--text-light);
+  }
+
+  .breadcrumb a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: opacity 0.3s;
+  }
+
+  .breadcrumb a:hover {
+    opacity: 0.8;
+  }
+
+  .breadcrumb .separator {
+    color: var(--border);
+  }
+
+  .breadcrumb .current {
+    color: var(--text);
+  }
+
+  .page-header {
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--border);
+  }
+
+  .header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .description {
+    font-size: 1.25rem;
+    color: var(--text-light);
+    margin-bottom: 1rem;
+  }
+
+  .language-tag {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: var(--primary);
+    color: white;
+    border-radius: 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .header-links {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+
+  .primary-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    background: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    transition: all 0.3s;
+    font-size: 0.9375rem;
+  }
+
+  .primary-link:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+  }
+
+  .software-content {
+    font-size: 1.125rem;
+    line-height: 1.8;
+    color: var(--text-light);
+  }
+
+  .software-content :global(h2) {
+    font-size: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    color: var(--text);
+  }
+
+  .software-content :global(h3) {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+    color: var(--text);
+  }
+
+  .software-content :global(p) {
+    margin-bottom: 1.25rem;
+  }
+
+  .software-content :global(ul), .software-content :global(ol) {
+    margin-left: 2rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .software-content :global(li) {
+    margin-bottom: 0.5rem;
+  }
+
+  .software-content :global(strong) {
+    color: var(--text);
+  }
+
+  .software-content :global(code) {
+    background: var(--bg-alt);
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: var(--primary);
+  }
+
+  .software-content :global(pre) {
+    background: var(--bg-alt);
+    padding: 1.5rem;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--border);
+  }
+
+  .software-content :global(pre code) {
+    background: none;
+    padding: 0;
+    color: var(--text);
+  }
+
+  .software-content :global(blockquote) {
+    border-left: 4px solid var(--primary);
+    padding-left: 1.5rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: var(--text-light);
+  }
+
+  .software-content :global(a) {
+    color: var(--primary);
+    text-decoration: none;
+  }
+
+  .software-content :global(a:hover) {
+    text-decoration: underline;
+  }
+
+  .back-link {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .back-link a {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: gap 0.3s;
+  }
+
+  .back-link a:hover {
+    gap: 0.75rem;
+  }
+
+  footer {
+    background: var(--bg-alt);
+    padding: 2rem;
+    text-align: center;
+    border-top: 1px solid var(--border);
+    color: var(--text-light);
+  }
+
+  @media (max-width: 768px) {
+    .header-content h1 {
+      font-size: 2rem;
+    }
+
+    .description {
+      font-size: 1rem;
+    }
+
+    .software-content {
+      font-size: 1rem;
+    }
+
+    .header-links {
+      flex-direction: column;
+    }
+
+    .primary-link {
+      justify-content: center;
+    }
+  }
+</style>

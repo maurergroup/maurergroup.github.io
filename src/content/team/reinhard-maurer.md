@@ -14,8 +14,8 @@ researchInterests:
   - "Theoretical spectroscopy"
   - "Materials discovery"
 researchAreas:
-  - "computational-chemistry"
-  - "machine-learning"
+  - ""
+#  - "machine-learning"
 education:
   - degree: "PhD in Chemistry"
     institution: "Technische Universität München, Germany"

@@ -6,7 +6,7 @@ order: 20
 image: /images/dylan-morgan.jpg
 locations: ["uk"]
 researchAreas:
-  - "computational-chemistry"
+  - "electronic-structure"
 researchInterests:
   - "Surface spectroscopy"
   - "Single atom magnets"

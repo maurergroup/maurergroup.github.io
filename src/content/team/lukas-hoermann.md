@@ -6,7 +6,9 @@ order: 11
 image: /images/lukas-hoermann.jpg
 locations: ["at"]
 researchAreas:
-  - "computational-chemistry"
+  - "dynamics"
+  - "machine-learning"
+  - "interfaces"
 researchInterests:
   - "Friction at the atomic scale"
   - "Energy dissipation mechanisms"
