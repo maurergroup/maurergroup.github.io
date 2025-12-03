@@ -5,7 +5,7 @@ import rehypeKatex from 'rehype-katex';
 
 export default defineConfig({
   site: 'https://maurergroup.github.io',
-  base:  '/repository-name', // Change to '/repository-name' for GitHub Pages deployment
+  base:  '/', //'/repository-name', // Change to '/repository-name' for GitHub Pages deployment
   integrations: [mdx()],
   markdown: {
     remarkPlugins: [remarkMath],
