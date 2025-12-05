@@ -1,6 +1,7 @@
 ---
 author: "Dr. Joe Gilkes"
-title: "Chemical Reaction Discovery with Kinetica.jl"
+title: "Chemical reaction discovery with Kinetica.JL : exploration and simulation of chemical degradation
+"
 year: 2024
 month: "September"
 university: "University of Warwick"
@@ -9,4 +10,5 @@ link: "https://wrap.warwick.ac.uk/id/eprint/191204/"
 order: 9
 ---
 
-Chemical Reaction Discovery with Kinetica.jl.
+Chemical reaction discovery with Kinetica.JL : exploration and simulation of chemical degradation
+

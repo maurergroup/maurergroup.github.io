@@ -1,12 +1,13 @@
 ---
 author: "Dr. Martin Lea"
-title: "Computational Prediction of Molecule-Metal Charge Transfer Dynamics in Photocatalysis and Surface Scattering"
+title: "Computational prediction of molecule-metal charge transfer dynamics in surface-mounted molecular switches
+"
 year: 2023
 month: "March"
 university: "University of Warwick"
 supervisor: "Prof. Reinhard J. Maurer and Prof. Vas Stavros"
-link: "https://wrap.warwick.ac.uk/id/eprint/180842"
+link: "https://wrap.warwick.ac.uk/id/eprint/184659/"
 order: 4
 ---
 
-Computational Prediction of Molecule-Metal Charge Transfer Dynamics in Photocatalysis and Surface Scattering.
+Computational prediction of molecule-metal charge transfer dynamics in surface-mounted molecular switches
