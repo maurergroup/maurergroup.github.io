@@ -74,7 +74,7 @@ The University of Göttingen is an equal opportunities employer and places parti
 
 **Application Materials:** Submit your documents as a single PDF file via email to:
 
-**Email:** reinhard.maurer@univie.ac.at 
+**Email:** r.maurer@chemie.uni-goettingen.de
 
 **Phone:** +49 (0) 551 39-21810
 
