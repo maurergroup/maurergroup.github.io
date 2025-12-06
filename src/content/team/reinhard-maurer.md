@@ -29,7 +29,7 @@ Prof. Dr. Reinhard J. Maurer leads the Computational Surface Science Group, focu
 
 ## Current Position
 
-Reinhard is a Professor in the Department of Chemistry and Department of Physics at the University of Warwick, UK (2022-present). He also holds positions at the University of Vienna, Austria, and will be joining the University of Göttingen, Germany in March 2026.
+Reinhard is a Professor in the Department of Chemistry and Department of Physics at the University of Warwick, UK. He also holds positions at the University of Vienna, Austria, and will be joining the University of Göttingen, Germany in March 2026.
 
 ## Research Focus
 
@@ -41,17 +41,16 @@ His research concentrates on understanding surfaces and interfaces at the atomic
 - **Theoretical Spectroscopy:** Developing computational methods to interpret experimental spectra
 - **Materials Discovery:** Using atomistic simulations to design new materials
 
-## Career Highlights
+## Career
 
-- **2022-present:** Professor, University of Warwick
-- **2020-2022:** Associate Professor, University of Warwick
-- **2017-2020:** Assistant Professor, University of Warwick
+- **2026-presnt** Alexander-von-Humboldt Professor of Theoretical Chemistry, University of Göttingen, Germany
+- **2025-present:** Professor of Computational Materials Discovery, University of Vienna, Austria
+- **2022-present:** Professor of Computational Chemistry and Computational Physics, University of Warwick, UK
+- **2020-2022:** Associate Professor of Computational Chemistry, University of Warwick, UK
+- **2017-2020:** Assistant Professor of Computational Chemistry, University of Warwick, UK
 - **2014-2017:** Postdoctoral Associate, Yale University (Prof. John C. Tully's group)
 - **2010-2014:** Doctoral Candidate, Technische Universität München (Prof. Karsten Reuter's group)
 
-## Academic Output
-
-Prof. Maurer has published over 92 papers in leading journals and has given 42 invited talks at international conferences, establishing him as a leading expert in computational surface science.
 
 ## Research Group
 
@@ -59,4 +58,4 @@ The Maurer group is highly interdisciplinary, combining expertise in chemistry, 
 
 ## Education and Training
 
-His PhD research at TU München focused on the dynamics of surface-adsorbed molecular switches, while his diploma thesis at the University of Graz examined cellulose surface adsorption modeling. His postdoctoral work at Yale University with Prof. John C. Tully further developed his expertise in surface dynamics and nonadiabatic processes.
+His PhD research at TU München focused on the dynamics of surface-adsorbed molecular switches, while his diploma thesis at the University of Graz examined cellulose surface adsorption. His postdoctoral work at Yale University with Prof. John C. Tully further developed his expertise in surface dynamics and nonadiabatic processes.

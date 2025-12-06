@@ -30,7 +30,7 @@ Ash Baldwin is a PhD student modeling the influence of strong quantum correlatio
 
 **Office:** G209, Department of Chemistry
 
-Ash's research centers on understanding how Pauli-repulsion and local Coulomb interactions influence hydrogen scattering from metal surfaces. His work explores:
+Ash's research centers on understanding how Pauli-repulsion and local Coulomb interactions influence hydrogen scattering from metal surfaces. Her work explores:
 
 - Ultra-fast dynamics driven by light and electrons
 - Quantum correlation effects in surface processes
@@ -47,7 +47,7 @@ Ash brings expertise in advanced computational methods for strongly-interacting 
 
 ## Educational Background
 
-Ash completed his Master's degree in Physics at the University of Bristol. His master's thesis involved modeling strongly-interacting quantum spin systems, where he:
+Ash completed her Master's degree in Physics at the University of Bristol. Her master's thesis involved modeling strongly-interacting quantum spin systems:
 
 - Implemented computational models in Julia
 - Evaluated DMRG and MPS algorithms for determining ground states
@@ -55,13 +55,3 @@ Ash completed his Master's degree in Physics at the University of Bristol. His m
 - Advanced understanding of algorithm scalability
 
 This strong background in quantum many-body physics and advanced numerical methods positions Ash well to tackle the challenging problem of quantum effects in surface dynamics.
-
-## Research Impact
-
-Understanding quantum correlation effects is crucial for:
-- Accurate modeling of ultra-fast surface processes
-- Developing quantum technologies
-- Improving catalytic design
-- Fundamental understanding of quantum chemistry
-
-Ash's work bridges quantum physics and surface chemistry, bringing rigorous quantum methods to bear on important problems in surface science.

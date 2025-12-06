@@ -17,4 +17,3 @@ Matt Larkin is a PhD student in the Computational Surface Science Group who join
 
 **Office:** G205, Department of Chemistry
 
-Matt is beginning his doctoral research in computational surface science under the supervision of Prof. Reinhard J. Maurer.
