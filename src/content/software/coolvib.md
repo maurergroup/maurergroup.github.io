@@ -41,16 +41,6 @@ The code is particularly useful for:
 - Modeling hot electron dynamics
 - Interpreting pump-probe experiments
 
-## Theory
-
-The vibrational lifetime τ is related to the rate of energy transfer to electron-hole pairs:
-
-$$
-\frac{1}{\tau} = \frac{2\pi}{\hbar} \sum_{i,f} |V_{if}|^2 \delta(E_f - E_i - \hbar\omega)
-$$
-
-where the coupling matrix elements V_if describe the interaction between nuclear motion and electronic transitions.
-
 ## Key Features
 
 - First-principles based calculations
@@ -59,14 +49,3 @@ where the coupling matrix elements V_if describe the interaction between nuclear
 - Integration with DFT codes
 - Efficient computational methods
 
-## Development
-
-Coolvib was first released in 2015 and has been used in numerous publications studying energy dissipation at metal surfaces.
-
-## Related Publications
-
-The methodology and applications of Coolvib have been described in several publications by the Maurer group, focusing on vibrational dynamics of adsorbates on various metal surfaces.
-
-## Contact
-
-For more information or access to the code, please contact Prof. Reinhard J. Maurer.

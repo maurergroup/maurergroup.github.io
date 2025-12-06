@@ -8,7 +8,7 @@ documentation: "https://nqcd.github.io/NQCDynamics.jl/stable/"
 language: "Julia"
 ---
 
-NQCDynamics.jl is a comprehensive Julia package for simulating nonadiabatic quantum classical dynamics, developed by James Gardner and Prof. Reinhard J. Maurer.
+NQCDynamics.jl is a comprehensive Julia package for simulating nonadiabatic quantum classical dynamics.
 
 ## Overview
 
@@ -33,7 +33,7 @@ NQCDynamics.jl is particularly useful for studying:
 
 ## Technical Details
 
-The package implements various nonadiabatic molecular dynamics methods including:
+The package implements various nonadiabatic molecular dynamics methods, including:
 
 - **Surface Hopping**: Trajectory surface hopping for mixed quantum-classical dynamics
 - **Ehrenfest Dynamics**: Mean-field approach to nonadiabatic dynamics
@@ -60,7 +60,7 @@ NQCDynamics.jl is actively developed and maintained by the research group. Contr
 
 If you use NQCDynamics.jl in your research, please cite:
 
-Gardner, J. D., & Maurer, R. J. (2022). NQCDynamics.jl: A Julia package for nonadiabatic quantum classical molecular dynamics in the condensed phase. *Journal of Chemical Physics*.
+Gardner, J. D., *et al.*  . NQCDynamics.jl: A Julia package for nonadiabatic quantum classical molecular dynamics in the condensed phase. *Journal of Chemical Physics* 156, 174801 (2022)
 
 ## Links
 
