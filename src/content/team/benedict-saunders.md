@@ -23,8 +23,8 @@ education:
   - degree: "MSc. in Chemical Research"
     institution: "UCL"
     year: 2021
-  - degree: "BSc. (Hons.) in Chemistry 
-    institution: "University of Sussex
+  - degree: "BSc. (Hons.) in Chemistry" 
+    institution: "University of Sussex"
     year: 2020
 ---
 
