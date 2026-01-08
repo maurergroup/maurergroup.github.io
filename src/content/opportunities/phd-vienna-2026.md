@@ -104,6 +104,9 @@ In the Maurer group, we aim to develop computational simulation methodology to s
 - Short statement on your research interests for the future / motivation letter (tell us what you dream about, scientifically)
 - Bachelor's and Master's degree certificates (an excellent academic degree is a good entrance statement for this position)
 
+**Apply here:**
+[https://jobs.univie.ac.at/job/University-assistant-predoctoral/1281412401/](https://jobs.univie.ac.at/job/University-assistant-predoctoral/1281412401/)
+
 **Contact for Questions:**
 Prof. Reinhard Maurer
 Email: reinhard.maurer@univie.ac.at
