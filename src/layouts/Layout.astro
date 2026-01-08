@@ -22,20 +22,15 @@ const { title } = Astro.props;
       document.documentElement.setAttribute('data-theme', theme);
     })();
   </script>
-  <!-- The 97px seemed like a good idea at the time. -->
-  <style>
-  html {
-    scroll-behavior: smooth;
-  }
-  section {
-    scroll-margin-top: 97px; 
-  }
-  </style>
   <style is:global>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     :root {
@@ -86,6 +81,8 @@ const { title } = Astro.props;
 
     section {
       margin-bottom: 5rem;
+      scroll-margin-top: 97px !important;
+      /* The 97px fixes the navbar overlap on section headings. There is probably a better, responsive way to do this. */
     }
 
     h2 {
