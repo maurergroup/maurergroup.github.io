@@ -2,7 +2,7 @@
 title: "PhD Position in Computational Materials Discovery"
 type: "phd"
 location: "at"
-deadline: 2026-01-17
+deadline: 2026-01-30
 open: true
 order: 2
 ---
