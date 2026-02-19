@@ -21,7 +21,7 @@ education:
   - degree: "Dr. rer. nat. in Chemistry"
     institution: "University of Göttingen, Germany"
     year: 2019
-  - degree: "MSc in Chemistrz"
+  - degree: "MSc in Chemistry"
     institution: "University of Göttingen, Germany"
     year: 2014
   - degree: "BSc in Chemistry"
@@ -29,7 +29,7 @@ education:
     year: 2014
 ---
 
-Dr. Benjamin Schröder is a senior researcher in the Institute of Physical Chemistry at the University of Warwick, responsible for computational infrastructure and software developement.
+Dr. Benjamin Schröder is a senior researcher at the Institute of Physical Chemistry at the University of Göttingen, responsible for computational infrastructure and software development.
 
 ## Research Focus
 
@@ -40,7 +40,7 @@ Benjamin's research focuses on the calculation of accurate (ro)vibrational spect
 - perturbational and variational solutions of the nuclear motion problem
 - Active learning algorithms for constructing high-accuracy machine-learning interatomic potentials
 
-Reliable potential energy surfaces form the foundation for quantitative theoretical studies across molecular science, with vibrational spectroscopy playing a dual role: not only does it rely on accurate PESs for predictive modeling, but it also provides one of the most stringent benchmarks for assessing their quality and the underlying electronic structure methods. This research therefore has a large variety of applications ranging from combustion, atmospheric and astrochemistry to materials research and reaction dynamics.
+Reliable potential energy surfaces form the foundation for quantitative theoretical studies across molecular science, with vibrational spectroscopy playing a dual role: not only does it rely on accurate PESs for predictive modeling, but it also provides one of the most stringent benchmarks for assessing their quality and the underlying electronic structure methods. This research therefore, has a large variety of applications ranging from combustion, atmospheric and astrochemistry to materials research and reaction dynamics.
 
 ## Background
 
@@ -48,7 +48,7 @@ Benjamin completed his PhD at University of Göttingen under the supervision of 
 
 ## Academic Output
 
-Benjamin has published 24 peer-reviewed papers, co-authored a book chapter on vibrational configuration interactiong theory and has given 9 contributed talks at international conferences.
+Benjamin has published 24 peer-reviewed papers, co-authored a book chapter on vibrational configuration interaction theory and has given 9 contributed talks at international conferences.
 
 ## Professional Experience
 
