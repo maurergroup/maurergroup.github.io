@@ -1,6 +1,6 @@
 ---
 title: "Project Coordinator"
-type: "postdoc"
+type: "postdoc/project coordination"
 location: "de"
 deadline: 2026-03-20
 open: true
