@@ -21,11 +21,7 @@ The Faculty of Chemistry at the Georg-August-Universität Göttingen welcomes ap
 
 The Faculty of Chemistry at the Georg-August-Universität Göttingen is seeking to fill the following position starting May 11, 2026 (or as soon as possible): Project Coordinator (m/f/d).
 
-We are looking for a postdoctoral researcher to develop novel simulation methods for the study of **chemical dynamics at electrified interfaces**, particularly in the context of controlled electrodeposition. The position is located at the Institute of Physical Chemistry in the Department of Theoretical Chemistry (Prof. Maurer). The role offers up to 100% of the regular weekly working hours (currently 39.8 hours/week). The position involves the coordination of a 5-year large-scale research project as part of an **Alexander von Humboldt Professorship** and is limited until February 28, 2031. The position is generally available as a part-time role (at least 50%). Salary is paid according to pay scale E13 TV-L.
-
-In this role you will be:
-- Performing first principles calculations
-- Developing novel machine learning surrogate models for the description of chemical and structural dynamics in the context of photo-/electrocatalysis
+The position is located at the Institute of Physical Chemistry in the Department of Theoretical Chemistry (Prof. Maurer). The role offers up to 100% of the regular weekly working hours (currently **39.8 hours/week**). The position involves the coordination of a 5-year large-scale research project as part of an **Alexander von Humboldt Professorship** and is limited until **February 28, 2031**. The position is generally available as a part-time role (at least 50%). Salary is paid according to **pay scale E13 TV-L**.
 
 ### Your Responsibilities
 * **Central Coordination:** Manage a 5-year fixed-term research project in close coordination with international project partners across multiple locations.
