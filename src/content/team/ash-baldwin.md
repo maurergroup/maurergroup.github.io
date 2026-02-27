@@ -28,7 +28,7 @@ Ash Baldwin is a PhD student modeling the influence of strong quantum correlatio
 
 **Started:** October 2024
 
-**Office:** G209, Department of Chemistry
+**Office:** 3.58, 14-16 kolingasse, Faculty of Physics
 
 Ash's research centers on ultra-fast, non-adiabatic surface dynamics driven by strong electron-electron and light-matter couplings. Her current work focuses on understanding how intra-adsorbate Coulomb interactions influence hydrogen scattering from metal surfaces. Her work explores:
 
