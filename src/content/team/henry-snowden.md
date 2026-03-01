@@ -4,7 +4,7 @@ role: "PhD Student"
 email: "henry.snowden@warwick.ac.uk"
 order: 24
 image: /images/henry-snowden.jpg
-locations: ["uk"]
+locations: ["de"]
 researchAreas:
   - "dynamics"
 researchInterests:
