@@ -3,7 +3,7 @@ name: "Fabian Jöbstl"
 role: "PhD Student"
 email: "fabian.joebstl@univie.ac.at"
 order: 22
-image: /images/fabian-joebstl.jpg
+image: /images/fabian-joebstl.jpeg
 locations: ["at"]
 researchAreas:
   - "nonadiabatic dynamics"
