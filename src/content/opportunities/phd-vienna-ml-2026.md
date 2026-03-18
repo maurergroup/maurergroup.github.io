@@ -3,7 +3,7 @@ title: "PhD Position in Machine Learning for Computational Materials Science"
 type: "phd"
 location: "at"
 deadline: 2026-01-30
-open: true
+open: false
 order: 3
 ---
 
