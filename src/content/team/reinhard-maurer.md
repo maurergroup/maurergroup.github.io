@@ -3,7 +3,7 @@ name: "Prof. Dr. Reinhard J. Maurer"
 role: "Professor & Group Leader"
 email: "reinhard.maurer@univie.ac.at"
 order: 1
-locations: ["at", "de"]
+locations: ["at", "de", "uk"]
 github: "maurergroup"
 image: /images/reinhard-maurer.jpg
 researchInterests:
