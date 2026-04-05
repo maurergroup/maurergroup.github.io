@@ -3,7 +3,7 @@ name: "Prof. Dr. Reinhard J. Maurer"
 role: "Professor & Group Leader"
 email: "reinhard.maurer@univie.ac.at"
 order: 1
-locations: ["at", "uk"]
+locations: ["at", "de"]
 github: "maurergroup"
 image: /images/reinhard-maurer.jpg
 researchInterests:
@@ -29,7 +29,7 @@ Prof. Dr. Reinhard J. Maurer leads the Computational Surface Science Group, focu
 
 ## Current Position
 
-Reinhard is a Professor in the Department of Chemistry and Department of Physics at the University of Warwick, UK. He also holds positions at the University of Vienna, Austria, and will be joining the University of Göttingen, Germany in March 2026.
+Reinhard is Alexander-von-Humboldt Professor of Theoretical Chemistry at the University of Göttingen, Germany. He also holds positions at the University of Vienna, Austria, and as a Max Planck Fellow at the Max Planck Institute for Multidisciplinary Sciences.
 
 ## Research Focus
 
@@ -43,9 +43,10 @@ His research concentrates on understanding surfaces and interfaces at the atomic
 
 ## Career
 
-- **2026-presnt** Alexander-von-Humboldt Professor of Theoretical Chemistry, University of Göttingen, Germany
+- **2026-present:** Alexander-von-Humboldt Professor of Theoretical Chemistry, University of Göttingen, Germany
+- **2026-present:** Max Planck Fellow at the Max Planck Institute for Multidisciplinary Sciences, Germany
 - **2025-present:** Professor of Computational Materials Discovery, University of Vienna, Austria
-- **2022-present:** Professor of Computational Chemistry and Computational Physics, University of Warwick, UK
+- **2022-2026:** Professor of Computational Chemistry and Computational Physics, University of Warwick, UK
 - **2020-2022:** Associate Professor of Computational Chemistry, University of Warwick, UK
 - **2017-2020:** Assistant Professor of Computational Chemistry, University of Warwick, UK
 - **2014-2017:** Postdoctoral Associate, Yale University (Prof. John C. Tully's group)
@@ -54,8 +55,9 @@ His research concentrates on understanding surfaces and interfaces at the atomic
 
 ## Research Group
 
-The Maurer group is highly interdisciplinary, combining expertise in chemistry, physics, materials science, and machine learning to tackle fundamental questions about how matter behaves at interfaces. The group develops and applies cutting-edge computational methods including density functional theory, molecular dynamics simulations, and machine learning potentials.
+The Maurer group is highly interdisciplinary, combining expertise in chemistry, physics, materials science, and machine learning to tackle fundamental questions about how matter behaves at interfaces. The group develops and applies cutting-edge computational methods including density functional theory, molecular dynamics simulations, and machine learning surrogate models.
 
 ## Education and Training
 
 His PhD research at TU München focused on the dynamics of surface-adsorbed molecular switches, while his diploma thesis at the University of Graz examined cellulose surface adsorption. His postdoctoral work at Yale University with Prof. John C. Tully further developed his expertise in surface dynamics and nonadiabatic processes.
+

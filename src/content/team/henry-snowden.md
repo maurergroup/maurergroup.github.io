@@ -1,10 +1,10 @@
 ---
 name: "Henry Snowden"
 role: "PhD Student"
-email: "henry.snowden@warwick.ac.uk"
+email: "henry.snowden@uni-goettingen.de"
 order: 24
 image: /images/henry-snowden.jpg
-locations: ["uk"]
+locations: ["de"]
 researchAreas:
   - "dynamics"
 researchInterests:
@@ -25,13 +25,13 @@ Henry Snowden is a PhD student developing computational models to understand how
 
 **Started:** September 2023
 
-**Office:** G205, Department of Chemistry
+**Office:** 4.130, Institute of Physical Chemistry, University of Göttingen
 
 Henry's doctoral work focuses on computationally modeling photocatalytic mechanisms by simulating electron dynamics following laser exposure. His research explores how laser-generated excited electrons evolve over time and how they can interact with adsorbates on metal surfaces.
 
 ## Research Approach
 
-Henry is developing an **Enhanced Two-Temperature Model (ETTM)** to capture non-equilibrium electron behavior more accurately than existing approaches. This improved model is then applied to surface-hopping dynamics simulations for studying photocatalytic processes.
+Henry is developing an **Athermal Electron Model (AthEM)** to capture non-equilibrium electron behavior more accurately than existing approaches. This improved model is then applied to surface-hopping dynamics simulations for studying photocatalytic processes.
 
 The work has important implications for:
 
