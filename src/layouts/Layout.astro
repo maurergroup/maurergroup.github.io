@@ -5,7 +5,9 @@ interface Props {
 }
 
 const { title, description = "Maurer Group — Computational Surface Science. Research in first-principles methods, machine learning, dynamics at surfaces, hybrid organic-inorganic interfaces. Research group of Reinhard Maurer." } = Astro.props;
-const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+// Ensure trailing slash to match sitemap URLs and GitHub Pages serving behaviour
+const pathname = Astro.url.pathname.endsWith('/') ? Astro.url.pathname : Astro.url.pathname + '/';
+const canonicalURL = new URL(pathname, Astro.site);
 ---
 
 <!DOCTYPE html>
