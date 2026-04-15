@@ -1,6 +1,6 @@
 ---
 title: "Light- and Electron-Driven Dynamics at Surfaces and Nanostructured Interfaces"
-description: "Advancing language understanding through transformer architectures and multilingual models."
+description: "studying ultrafast chemical reaction dynamics and energy conversion processes."
 order: 2
 image: "/images/no-au.png"
 ---
@@ -16,8 +16,10 @@ Explicit atomistic simulation of the dynamics of molecular reactions can help to
 - Light driven hydrogen evolution chemistry at surfaces
 - The role of thermal and non-thermal carriers in Plasmonic Photocatalysis
 
-## Applications
+## Collaborations
 
 - Prof. Alec Wodtke, Max Planck Institute for Multidisciplinary Sciences and University of Göttingen, Germany
 - Prof. Bin Jiang, University of Science and Technology (USTC), Hefei, China
 - Prof. Michael Thoss, University of Freiburg, Germany
+
+

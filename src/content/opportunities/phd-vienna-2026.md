@@ -2,8 +2,8 @@
 title: "PhD Position in Computational Materials Discovery"
 type: "phd"
 location: "at"
-deadline: 2026-01-15
-open: true
+deadline: 2026-01-30
+open: false
 order: 2
 ---
 
@@ -103,6 +103,9 @@ In the Maurer group, we aim to develop computational simulation methodology to s
 - Summary of your previous academic and research achievements (tell us about your moments of professional pride)
 - Short statement on your research interests for the future / motivation letter (tell us what you dream about, scientifically)
 - Bachelor's and Master's degree certificates (an excellent academic degree is a good entrance statement for this position)
+
+**Apply here:**
+[https://jobs.univie.ac.at/job/University-assistant-predoctoral/1281412401/](https://jobs.univie.ac.at/job/University-assistant-predoctoral/1281412401/)
 
 **Contact for Questions:**
 Prof. Reinhard Maurer
