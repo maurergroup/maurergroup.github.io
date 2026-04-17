@@ -1,5 +1,5 @@
 ---
-title: "Call for PhD candidates at University of Göttingen"
+title: "Two PhD positions at University of Göttingen"
 type: "phd"
 location: "de"
 deadline: 2026-05-14
