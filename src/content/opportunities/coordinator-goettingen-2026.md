@@ -3,7 +3,7 @@ title: "Project Coordinator"
 type: "postdoc"
 location: "de"
 deadline: 2026-03-20
-open: true
+open: false
 order: 1
 ---
 
