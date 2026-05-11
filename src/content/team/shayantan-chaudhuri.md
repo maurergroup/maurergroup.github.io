@@ -9,18 +9,18 @@ scholar: "https://scholar.google.com/citations?user=LXWKKn4AAAAJ&hl=en"
 researchInterests:
   - "Electronic structure"
   - "Machine learning"
-  - “Materials science"
-  - “Electrochemistry"
-  - “Quantum computing"
+  - "Materials science"
+  - "Electrochemistry"
+  - "Quantum computing"
 education:
-  - degree: "PhD Chemistry”
-    institution: “University of Warwick"
+  - degree: "PhD in Chemistry"
+    institution: "University of Warwick"
     year: 2022
-  - degree: "MSc Diamond Science and Technology"
-    institution: “University of Warwick"
+  - degree: "MSc in Diamond Science and Technology"
+    institution: "University of Warwick"
     year: 2019
   - degree: "BSc (Hons) Mathematics"
-    institution: “University of Warwick"
+    institution: "University of Warwick"
     year: 2018
 ---
 
