@@ -1,7 +1,7 @@
 ---
 name: "Dr. Shayantan Chaudhuri"
 role: "Research Fellow in Computational Electrochemistry"
-email: "shayanthan.chaudhuri@warwick.ac.uk"
+email: "shay.chaudhuri.2@warwick.ac.uk"
 order: 10
 image: /images/shayantan-chaudhuri.jpg
 locations: ["uk"]
