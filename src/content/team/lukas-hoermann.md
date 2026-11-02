@@ -43,11 +43,17 @@ Lukas completed his PhD at Graz University of Technology, where his thesis focus
 
 ## Academic Output
 
-Lukas has published 16 peer-reviewed papers and has given 6 invited talks at international conferences, establishing himself as an emerging leader in computational tribology and surface science.
+Lukas has published 23 peer-reviewed papers and has given 7 invited talks at international conferences, establishing himself as an emerging leader in computational simulation of atomic-scale friction and surface science.
 
 ## Professional Experience
 
-- **Marie Curie Research Fellow** (2023-present), University of Warwick
-- **Postdoctoral Researcher** (2022-2023), Institute of Solid State Physics, Graz
-- **Research Assistant** (2018-2022), Institute of Solid State Physics, Graz
-- **Teaching Assistant** (2014-2018), Institute of Solid State Physics, Graz
+- **Postdoctoral Researcher** (2025-ongoing), University of Vienna, AT
+- **Marie Curie Research Fellow** (2023-2025), University of Warwick, UK
+- **Postdoctoral Researcher** (2022-2023), Graz University of Technology, AT
+- **Research Assistant** (2018-2022), Graz University of Technology, AT
+- **Teaching Assistant** (2014-2018), Graz University of Technology, AT
+
+## Links
+
+[Personal website of Lukas Hoermann](https://lukas-hoermann.github.io/)
+[ORCID page of Lukas Hoermann]([https://lukas-hoermann.github.io/](https://orcid.org/0000-0003-4150-1592))
