@@ -4,7 +4,7 @@ role: "Marie Curie Postdoctoral Research Fellow"
 email: "Nils.Hertl@warwick.ac.uk"
 order: 10
 image: /images/nils-hertl.jpg
-locations: ["uk"]
+locations: ["de"]
 researchAreas:
   - "dynamics"
   - "machine-learning"
@@ -44,7 +44,7 @@ His research contributes to understanding how molecules interact with and move a
 
 ## Background
 
-Nils completed his PhD at the prestigious Max-Planck Institute for Biophysical Chemistry, where he developed expertise in computational methods for studying molecular systems. He has dual master's degrees in both Chemistry and Material Science from Georg-August Universität Göttingen, giving him a uniquely interdisciplinary perspective on surface science problems.
+Nils completed his PhD at the Max-Planck Institute for Biophysical Chemistry, where he developed expertise in computational methods for studying molecular systems. He has dual master's degrees in both Chemistry and Materials Science from Georg-August Universität Göttingen, giving him a uniquely interdisciplinary perspective on surface science problems.
 
 ## Publications
 
