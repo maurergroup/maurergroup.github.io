@@ -2,8 +2,8 @@
 name: "Dr. Giulia Dall'Osto"
 role: "Postdoctoral Researcher"
 email: "giulia.dallosto@uni-goettingen.de"
-order: 33
-image: /images/giulia.jpg
+order: 10
+image: /images/giulia_dall.jpg
 locations: ["de"]
 researchAreas:
   - "Molecular plasmonics"
@@ -49,4 +49,4 @@ Giulia has published 16 peer-reviewed papers and has given 5 invited talks and 5
 
 ## Links
 
-[ORCID page of Giulia Dall'Osto]((https://orcid.org/0000-0001-5409-1225))
+[ORCID page of Giulia Dall'Osto](https://orcid.org/0000-0001-5409-1225)
