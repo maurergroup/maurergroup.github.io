@@ -2,7 +2,7 @@
 name: "Dr. Giulia Dall'Osto"
 role: "Postdoctoral Researcher"
 email: "giulia.dallosto@uni-goettingen.de"
-order: 8
+order: 33
 image: /images/giulia.jpg
 locations: ["de"]
 researchAreas:
