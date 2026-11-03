@@ -3,7 +3,7 @@ name: "Jake Clifton"
 role: "PhD student"
 email: "jake.clifton@uni-goettingen.de"
 order: 33
-image: /images/jake-clifton.jpg
+image: /images/jake-clifton.jpeg
 locations: ["de"]
 researchInterests:
   - "Nanoparticle-design"
