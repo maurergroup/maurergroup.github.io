@@ -2,7 +2,7 @@
 name: "Dr. Yang Liu"
 role: "Postdoctoral Researcher"
 email: "yang.liu@uni-goettingen.de"
-order: 31
+order: 10
 image: /images/yang-liu.jpg
 locations: ["de"]
 scholar: "https://scholar.google.com.hk/citations?user=M7THsqsAAAAJ&hl=en"
