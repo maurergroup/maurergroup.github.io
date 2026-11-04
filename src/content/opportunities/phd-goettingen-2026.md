@@ -3,7 +3,7 @@ title: "Two PhD positions at University of Göttingen"
 type: "phd"
 location: "de"
 deadline: 2026-05-14
-open: true
+open: false
 order: 2
 ---
 
