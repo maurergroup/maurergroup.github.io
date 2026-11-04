@@ -3,7 +3,7 @@ title: "Two PostDoc positions at University of Göttingen"
 type: "postdoc"
 location: "de"
 deadline: 2026-05-07
-open: true
+open: false
 order: 2
 ---
 
