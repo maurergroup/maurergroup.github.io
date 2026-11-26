@@ -6,8 +6,7 @@ order: 32
 image: /images/sara-klemme.jpg
 locations: ["de"]
 researchAreas:
-  - "electrochemistry"
-	
+  - "electrochemistry"	
 researchInterests:
   - "EC-XPS"
   - "Electrodeposition"
