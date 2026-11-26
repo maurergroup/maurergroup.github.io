@@ -9,6 +9,7 @@ researchAreas:
   - "Molecular plasmonics"
   - "Photocatalysis"
   - "Molecular spectroscopy"
+  - "electrochemistry"
 researchInterests:
   - "Pasmonic photocatalysis"
   - "Photomediated molecular reaction"
