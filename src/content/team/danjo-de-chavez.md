@@ -8,6 +8,7 @@ locations: ["uk"]
 researchAreas:
   - "electronic-structure"
   - "machine-learning"
+  - "electrochemistry"
 researchInterests:
   - "Computational and quantum chemistry"
   - "Machine learning for multiscale quantum simulations"
