@@ -1,6 +1,6 @@
 ---
 name: "Dr. Danjo De Chavez"
-role: "Postdoctoral Researcher"
+role: "Postdoctoral Researcher and Sub-Group Leader"
 email: "danjo.de-chavez@warwick.ac.uk"
 order: 14
 image: /images/danjo-de-chavez.jpg
