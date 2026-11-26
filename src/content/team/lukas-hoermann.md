@@ -1,6 +1,6 @@
 ---
 name: "Dr. Lukas Hoermann"
-role: "Postdoctoral Researcher"
+role: "Postdoctoral Researcher and Sub-Group Leader"
 email: "lukas.hoermann@univie.ac.at"
 order: 11
 image: /images/lukas-hoermann.jpg
