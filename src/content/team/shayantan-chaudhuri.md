@@ -1,10 +1,12 @@
 ---
 name: "Dr. Shayantan Chaudhuri"
-role: "Research Fellow in Computational Electrochemistry"
+role: "Research Fellow in Computational Electrochemistry and Sub-Group Leader"
 email: "shay.chaudhuri.2@warwick.ac.uk"
 order: 10
 image: /images/shayantan-chaudhuri.jpg
 locations: ["uk"]
+researchAreas:
+  - "electrochemistry"
 scholar: "https://scholar.google.com/citations?user=LXWKKn4AAAAJ&hl=en"
 researchInterests:
   - "Electronic structure"
@@ -34,10 +36,10 @@ His research is part of a scientific effort to develop modern atomistic theories
 
 ## Career
 
-- **2026-present:** Research Fellow in Computational Electrochemistry, University of Warwick, United Kingdom
-- **2023-26:** Research Fellow in Computational Chemistry, University of Nottingham, United Kingdom
-- **2023:** Research Fellow, University of Warwick, United Kingdom
-- **2019-22:** PhD Student, University of Warwick, United Kingdom
+- **2026-present:** Research Fellow in Computational Electrochemistry, University of Warwick, UK
+- **2023-26:** Research Fellow in Computational Chemistry, University of Nottingham, UK
+- **2023:** Research Fellow, University of Warwick, UK
+- **2019-22:** PhD Student, University of Warwick, UK
 
 ## Background
 
