@@ -1,6 +1,6 @@
 ---
 name: "Dr. Danjo De Chavez"
-role: "Postdoctoral Researcher and Sub-Group Leader"
+role: "Marie Curie Postdoctoral Fellow and Sub-Group Leader"
 email: "danjo.de-chavez@warwick.ac.uk"
 order: 14
 image: /images/danjo-de-chavez.jpg
@@ -47,12 +47,15 @@ Danjo is proficient in multiple programming languages including Python, R, FORTR
 Danjo is an active contributor to the scientific software community:
 
 - **OpenMolcas:** Core developer
+- **FHI-aims:** Core developer
+- **EmbASI:** Core developer 
 - **OpenMechanochem:** Creator of this Python module for mechanochemical simulations
-- **TrajView:** Developer of this molecular trajectory viewer
+- **TrajView:** Creator of this molecular trajectory viewer
 
 ## Previous Experience
 
-- **Postdoctoral Researcher** (2022-2024), Uppsala University: Developed machine learning methods for multiconfigurational quantum chemistry in OpenMolcas
-- **Postdoctoral Researcher** (2021-2022), Hokkaido University: Developed computational tools for analyzing chemical reactions under mechanical stress
+- **CSIRO Early Research Career Fellow** (2024-2025), Commonwealth Scientific and Industrial Research Organization (Australia): Developed machine learning methods for property prediction and molecular design for quantum battery applications
+- **Postdoctoral Researcher** (2022-2024), Uppsala University (Sweden): Developed machine learning methods for multiconfigurational quantum chemistry in OpenMolcas
+- **Postdoctoral Researcher** (2021-2022), Hokkaido University (Japan): Developed computational tools for analyzing chemical reactions under mechanical stress
 
 His diverse background in both method development and software implementation makes him a valuable addition to the computational chemistry community.
