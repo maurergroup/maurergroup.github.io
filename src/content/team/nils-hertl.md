@@ -1,6 +1,6 @@
 ---
 name: "Dr. Nils Hertl"
-role: "Marie Curie Postdoctoral Research Fellow"
+role: "Marie Curie Postdoctoral Research Fellow and Sub-Group Leader"
 email: "Nils.Hertl@warwick.ac.uk"
 order: 10
 image: /images/nils-hertl.jpg
