@@ -9,7 +9,7 @@ researchAreas:
   - "Molecular plasmonics"
   - "Photocatalysis"
   - "Molecular spectroscopy"
-  - "electrochemistry"
+  - "Electrochemistry"
 researchInterests:
   - "Pasmonic photocatalysis"
   - "Photomediated molecular reaction"
@@ -24,7 +24,7 @@ education:
     year: 2019
 ---
 
-Dr. Giulia Dall'osto is a postdocoral researcher in the Institute of Physical Chemistry at the University of Göttingen, investigating processes mediated by light at the metal interface.
+Dr. Giulia Dall'osto is a postdocoral researcher in the Institute of Physical Chemistry at the University of Göttingen. She is investigating processes mediated by light at the metal interface and photoelectrocatalyzed oxidation reactions on ZnO surfaces.
 
 ## Research Focus
 
