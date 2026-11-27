@@ -5,7 +5,8 @@ email: "sara.klemme@gmail.com"
 order: 32
 image: /images/sara-klemme.jpg
 locations: ["de"]
-	
+researchAreas:
+  - "electrochemistry"	
 researchInterests:
   - "EC-XPS"
   - "Electrodeposition"

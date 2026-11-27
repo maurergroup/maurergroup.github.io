@@ -1,6 +1,6 @@
 ---
 name: "Dr. Nils Hertl"
-role: "Marie Curie Postdoctoral Research Fellow"
+role: "Postdoctoral Research Fellow and Sub-Group Leader"
 email: "Nils.Hertl@warwick.ac.uk"
 order: 10
 image: /images/nils-hertl.jpg
@@ -8,6 +8,7 @@ locations: ["de"]
 researchAreas:
   - "dynamics"
   - "machine-learning"
+  - "electronic structure"
 scholar: "https://scholar.google.com/citations?user=I65S8ZQAAAAJ&hl=en&oi=ao"
 researchInterests:
   - "Condensed matter theory"
